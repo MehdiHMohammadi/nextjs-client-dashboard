@@ -14,14 +14,12 @@
 
 
 // app/profile/page.tsx - همان کد قبلی
-import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
+import { supabase } from "@/lib/supabaseClient";
 
 export default async function Dashboard() {
-  const supabase = createClient()
   
-  const {
-    data: { user },
+  const { data: { user },
     error
   } = await supabase.auth.getUser()
 
