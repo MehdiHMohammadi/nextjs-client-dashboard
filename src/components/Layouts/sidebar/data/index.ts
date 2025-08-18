@@ -1,7 +1,23 @@
+import { ComponentType } from "react";
 import * as Icons from "../icons";
 
+// تعریف نوع برای آیکون‌ها
+type IconComponent = ComponentType<{ className?: string }>;
 
-export const NAV_DATA = [
+interface NavItem {
+  title: string;
+  url: string;
+  icon: IconComponent;
+  items: never[]; // یا [] برای آرایه خالی
+}
+
+interface NavSection {
+  label: string;
+  items: NavItem[];
+}
+
+
+export const NAV_DATA : NavSection[] = [
   {
     label: "منوی اصلی",
     items: [
@@ -67,94 +83,7 @@ export const NAV_DATA = [
         icon: Icons.Calendar,
         items: [],
       },
-  //     {
-  //       title: "پروفایل",
-  //       url: "/profile",
-  //       icon: Icons.User,
-  //       items: [],
-  //     },
-  //     {
-  //       title: "فرم ها",
-  //       icon: Icons.Alphabet,
-  //       items: [
-  //         {
-  //           title: "المان های فرم",
-  //           url: "/forms/form-elements",
-  //         },
-  //         {
-  //           title: "فرم وکیل",
-  //           url: "/forms/form-law",
-  //         },
-  //                   {
-  //           title: "فرم وکیل متخصص",
-  //           url: "/forms/form-law1",
-  //         },
-  //         {
-  //           title: "ساختار فرم",
-  //           url: "/forms/form-layout",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       title: "جداول",
-  //       url: "/tables",
-  //       icon: Icons.Table,
-  //       items: [
-  //         {
-  //           title: "جدول ها",
-  //           url: "/tables",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       title: "صفحه ها",
-  //       icon: Icons.Alphabet,
-  //       items: [
-  //         {
-  //           title: "تنظیمات ",
-  //           url: "/settings",
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // },
-  // {
-  //   label: "اضافات",
-  //   items: [
-  //     {
-  //       title: "نمودارها",
-  //       icon: Icons.PieChart,
-  //       items: [
-  //         {
-  //           title: "نمودار ساده",
-  //           url: "/charts/basic-chart",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       title: "المان ها",
-  //       icon: Icons.FourCircle,
-  //       items: [
-  //         {
-  //           title: "هشدارها",
-  //           url: "/ui-elements/alerts",
-  //         },
-  //         {
-  //           title: "دکمه ها",
-  //           url: "/ui-elements/buttons",
-  //         },
-  //       ],
-  //     },
-      // {
-      //   title: "احراز هویت",
-      //   icon: Icons.Authentication,
-      //   items: [
-      //     {
-      //       title: "ورود",
-      //       url: "/",
-      //     },
-      //   ],
-      // },
+
     ],
   },
 ];

@@ -24,23 +24,18 @@ export function Sidebar() {
     // );
   };
 
-  useEffect(() => {
-    // Keep collapsible open, when it's subpage is active
-    NAV_DATA.some((section) => {
-      return section.items.some((item) => {
-        return item.items.some((subItem) => {
-          if (subItem.url === pathname) {
-            if (!expandedItems.includes(item.title)) {
-              toggleExpanded(item.title);
-            }
-
-            // Break the loop
-            return true;
-          }
-        });
-      });
+ useEffect(() => {
+  const newExpandedItems: string[] = [];
+  NAV_DATA.forEach((section) => {
+    section.items.forEach((item) => {
+      if (item.url === pathname) {
+        newExpandedItems.push(item.title);
+      }
     });
-  }, [pathname]);
+  });
+  setExpandedItems(newExpandedItems);
+}, [pathname]);
+
 
   return (
     <>
@@ -79,9 +74,9 @@ export function Sidebar() {
                 onClick={toggleSidebar}
                 className="absolute left-3/4 right-4.5 top-1/2 -translate-y-1/2 text-right"
               >
-                {/* <span className="sr-only">Close Menu</span>
+                <span className="sr-only">Close Menu</span>
 
-                <ArrowLeftIcon className="mr-auto size-7" /> */}
+                <ArrowLeftIcon className="ml-auto size-7" />
               </button>
             )}
           </div>
@@ -128,7 +123,7 @@ export function Sidebar() {
                                 className="ml-9 mr-0 space-y-1.5 pb-[15px] pr-0 pt-2"
                                 role="menu"
                               >
-                                {item.items.map((subItem) => (
+                                {/* {item.items.map((subItem) => (
                                   <li key={subItem.title} role="none">
                                     <MenuItem
                                       as="link"
@@ -138,34 +133,35 @@ export function Sidebar() {
                                       <span>{subItem.title}</span>
                                     </MenuItem>
                                   </li>
-                                ))}
+                                ))} */}
                               </ul>
                             )}
                           </div>
                         ) : (
-                          (() => {
-                            const href =
-                              "url" in item
-                                ? item.url + ""
-                                : "/" +
-                                  item.title.toLowerCase().split(" ").join("-");
+                          // (() => {
+                          //   const href =
+                          //     "url" in item
+                          //       ? item.url + ""
+                          //       : "/" +
+                          //         item.title.toLowerCase().split(" ").join("-");
 
-                            return (
-                              <MenuItem
-                                className="flex items-center gap-3 py-3"
-                                as="link"
-                                href={href}
-                                isActive={pathname === href}
-                              >
-                                <item.icon
-                                  className="size-6 shrink-0"
-                                  aria-hidden="true"
-                                />
+                          //   return (
+                          //     <MenuItem
+                          //       className="flex items-center gap-3 py-3"
+                          //       as="link"
+                          //       href={href}
+                          //       isActive={pathname === href}
+                          //     >
+                          //       <item.icon
+                          //         className="size-6 shrink-0"
+                          //         aria-hidden="true"
+                          //       />
 
-                                <span>{item.title}</span>
-                              </MenuItem>
-                            );
-                          })()
+                          //       <span>{item.title}</span>
+                          //     </MenuItem>
+                          //   );
+                          // })()
+                          <h1>Menu</h1>
                         )}
                       </li>
                     ))}

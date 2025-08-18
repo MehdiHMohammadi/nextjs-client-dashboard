@@ -24,7 +24,8 @@ export default async function Dashboard() {
   } = await supabase.auth.getUser()
 
   if (!user || error) {
-    redirect('/login?message=برای دسترسی به این صفحه باید وارد شوید')
+    // redirect('/login?message=برای دسترسی به این صفحه باید وارد شوید')
+    redirect('/login')
   }
 
   return (
