@@ -1,0 +1,453 @@
+📂 ساختار پروژه:
+- .env.local
+- .eslintrc.json
+- .gitignore
+- .prettierrc
+- jsvectormap.d.ts
+- lawfirms.db
+- next-env.d.ts
+- next.config.mjs
+- package-lock.json
+- package.json
+- pnpm-lock.yaml
+- postcss.config.js
+- project-info.js
+- public
+  - images
+    - best-value-banner.png
+    - brand
+      - brand-01.svg
+      - brand-02.svg
+      - brand-03.svg
+      - brand-04.svg
+      - brand-05.svg
+      - brand-06.svg
+      - brand-07.svg
+      - brand-08.svg
+      - brand-09.svg
+      - brand-10.svg
+      - brand-11.svg
+      - brand-12.svg
+      - brand-13.svg
+      - brand-14.svg
+      - brand-15.svg
+      - brand-16.svg
+      - brand-17.svg
+      - brand-18.svg
+      - brand-19.svg
+      - brand-20.svg
+    - cards
+      - cards-01.png
+      - cards-02.png
+      - cards-03.png
+      - cards-04.png
+      - cards-05.png
+      - cards-06.png
+    - carousel
+      - carousel-01.jpg
+      - carousel-02.jpg
+      - carousel-03.jpg
+    - country
+      - country-01.svg
+      - country-02.svg
+      - country-03.svg
+      - country-04.svg
+      - country-05.svg
+      - country-06.svg
+    - cover
+      - cover-01.png
+      - cover-02.jpg
+      - cover-03.jpg
+      - cover-04.jpg
+      - cover-05.jpg
+    - favicon.ico
+    - favicon.webp
+    - grids
+      - grid-01.svg
+      - grid-02.svg
+    - icon
+      - icon-arrow-down.svg
+      - icon-calendar.svg
+      - icon-chat.svg
+      - icon-copy-alt.svg
+      - icon-moon.svg
+      - icon-sun.svg
+    - illustration
+      - illustration-01.svg
+      - illustration-02.svg
+      - illustration-03.svg
+      - illustration-04.svg
+    - loading.gif
+    - logo
+      - dark.webp
+      - logo-icon.svg
+      - logo-icon1.svg
+      - logo-icon2.svg
+      - logo.svg
+      - logo.webp
+      - logo1.svg
+      - main.webp
+      - _.svg
+      - _logo-dark.svg
+    - networks
+      - Google_black.svg
+      - Instagram_black.svg
+      - Pinterest_black.svg
+      - Telegram_black.svg
+      - Tik Tok_black.svg
+      - Twitter_black.svg
+      - WhatsApp_black.svg
+      - Youtube_black.svg
+    - product
+      - product-01.png
+      - product-02.png
+      - product-03.png
+      - product-04.png
+      - product-thumb.png
+    - task
+      - task-01.jpg
+    - team
+      - team-01.png
+      - team-02.png
+      - team-03.png
+      - team-04.png
+      - team-05.png
+      - team-06.png
+      - team-07.png
+      - team-08.png
+    - todo
+      - dribble.svg
+      - linkdin.svg
+      - uideck.svg
+    - user
+      - default-avatar.png
+      - default-avatar.svg
+      - user-01.png
+      - user-02.png
+      - user-03.png
+      - user-04.png
+      - user-05.png
+      - user-06.png
+      - user-07.png
+      - user-08.png
+      - user-09.png
+      - user-10.png
+      - user-11.png
+      - user-12.png
+      - user-13.png
+      - user-14.png
+      - user-15.png
+      - user-16.png
+      - user-17.png
+      - user-18.png
+      - user-19.png
+      - user-20.png
+      - user-21.png
+      - user-22.png
+      - user-23.png
+      - user-24.png
+      - user-25.png
+      - user-26.png
+      - user-27.png
+      - user-28.png
+      - user-29.png
+      - user-30.png
+- README.md
+- src
+  - actions
+    - auth.ts
+  - api
+    - config.ts
+  - app
+    - (auth)
+      - callback
+      - confirm
+      - error
+      - forgot-password
+      - login
+    - (home)
+      - fetch.ts
+      - page.tsx
+      - _components
+    - (pages)
+      - calendar
+      - charts
+      - dashboard
+      - file-flow
+      - history
+      - profile
+      - settings
+      - smart-lawyer
+    - api
+      - lawfirms
+      - otp
+      - send-email
+    - favicon.ico
+    - favicon.webp
+    - forms
+      - form-elements
+      - form-law
+      - form-law1
+      - form-layout
+    - layout.tsx
+    - LayoutClientWrapper.tsx
+    - loading.gif
+    - providers.tsx
+    - tables
+      - page.tsx
+    - ui-elements
+      - alerts
+      - buttons
+  - assets
+    - icons.tsx
+    - logos
+      - Conclusion.svg
+      - dark.svg
+      - dark.webp
+      - dark00.webp
+      - facebook.svg
+      - github.svg
+      - google.svg
+      - index.ts
+      - logo.webp
+      - main.svg
+      - main.webp
+      - vimeo.svg
+      - x.svg
+  - components
+    - Auth
+      - GoogleSigninButton.tsx
+      - Signin
+      - SigninWithPassword.tsx
+    - Breadcrumbs
+      - Breadcrumb.tsx
+    - CalenderBox
+      - index.tsx
+    - Charts
+      - campaign-visitors
+      - payments-overview
+      - used-devices
+      - weeks-profit
+    - FileFlow
+      - fetch.ts
+      - icons.tsx
+      - invoice-table.tsx
+      - top-fileflow
+    - FormElements
+      - checkbox.tsx
+      - Checkboxes
+      - DatePicker
+      - InputGroup
+      - MultiSelect.tsx
+      - radio.tsx
+      - select.tsx
+      - switch.tsx
+      - Switchers
+    - Histories
+      - fetch.ts
+      - icons.tsx
+      - invoice-table.tsx
+      - top-histories
+      - top-products
+    - Layouts
+      - header
+      - showcase-section.tsx
+      - sidebar
+    - logo.tsx
+    - period-picker.tsx
+    - ProtectedRoute
+      - index.js
+    - Tables
+      - fetch.ts
+      - icons.tsx
+      - invoice-table.tsx
+      - top-channels
+      - top-products
+    - ToastProvider
+      - index.tsx
+    - ui
+      - badge.tsx
+      - card.tsx
+      - dropdown.tsx
+      - input.tsx
+      - Loading.tsx
+      - skeleton.tsx
+      - table.tsx
+    - ui-elements
+      - alert
+      - button.tsx
+  - contexts
+    - EmailContext.tsx
+  - css
+    - satoshi.css
+    - style.css
+  - fonts
+    - Satoshi-Black.eot
+    - Satoshi-Black.ttf
+    - Satoshi-Black.woff
+    - Satoshi-Black.woff2
+    - Satoshi-BlackItalic.eot
+    - Satoshi-BlackItalic.ttf
+    - Satoshi-BlackItalic.woff
+    - Satoshi-BlackItalic.woff2
+    - Satoshi-Bold.eot
+    - Satoshi-Bold.ttf
+    - Satoshi-Bold.woff
+    - Satoshi-Bold.woff2
+    - Satoshi-BoldItalic.eot
+    - Satoshi-BoldItalic.ttf
+    - Satoshi-BoldItalic.woff
+    - Satoshi-BoldItalic.woff2
+    - Satoshi-Italic.eot
+    - Satoshi-Italic.ttf
+    - Satoshi-Italic.woff
+    - Satoshi-Italic.woff2
+    - Satoshi-Light.eot
+    - Satoshi-Light.ttf
+    - Satoshi-Light.woff
+    - Satoshi-Light.woff2
+    - Satoshi-LightItalic.eot
+    - Satoshi-LightItalic.ttf
+    - Satoshi-LightItalic.woff
+    - Satoshi-LightItalic.woff2
+    - Satoshi-Medium.eot
+    - Satoshi-Medium.ttf
+    - Satoshi-Medium.woff
+    - Satoshi-Medium.woff2
+    - Satoshi-MediumItalic.eot
+    - Satoshi-MediumItalic.ttf
+    - Satoshi-MediumItalic.woff
+    - Satoshi-MediumItalic.woff2
+    - Satoshi-Regular.eot
+    - Satoshi-Regular.ttf
+    - Satoshi-Regular.woff
+    - Satoshi-Regular.woff2
+    - Satoshi-Variable.eot
+    - Satoshi-Variable.ttf
+    - Satoshi-Variable.woff
+    - Satoshi-Variable.woff2
+    - Satoshi-VariableItalic.eot
+    - Satoshi-VariableItalic.ttf
+    - Satoshi-VariableItalic.woff
+    - Satoshi-VariableItalic.woff2
+    - yekanbakh
+      - YekanBakhFaNum-Black.woff2
+      - YekanBakhFaNum-Bold.woff2
+      - YekanBakhFaNum-Fat.woff2
+      - YekanBakhFaNum-Heavy.woff2
+      - YekanBakhFaNum-Light.woff2
+      - YekanBakhFaNum-Medium.woff2
+      - YekanBakhFaNum-Regular.woff2
+      - YekanBakhFaNum-SemiBold.woff2
+      - YekanBakhFaNum-Thin.woff2
+  - hooks
+    - use-click-outside.ts
+    - use-mobile.ts
+  - js
+    - table-scroll.js
+    - us-aea-en.js
+    - world.js
+  - lib
+    - format-message-time.ts
+    - format-number.ts
+    - supabase
+      - client.ts
+      - middleware.ts
+      - server.ts
+    - supabaseClient.ts
+    - utils.ts
+  - services
+    - charts.services.ts
+  - types
+    - icon-props.ts
+    - set-state-action-type.ts
+    - supabase.ts
+  - utils
+    - timeframe-extractor.ts
+  - _middleware.ts
+- supabase
+  - .temp
+    - cli-latest
+  - config.toml
+  - functions
+    - send-email
+      - .npmrc
+      - deno.json
+      - index.ts
+- tailwind.config.ts
+- tsconfig.json
+- yarn.lock
+
+
+📦 package.json:
+{
+  "name": "nextjs-client-dashboard",
+  "version": "1.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.54.0",
+    "apexcharts": "^4.5.0",
+    "axios": "^1.8.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
+    "flatpickr": "^4.6.13",
+    "framer-motion": "^12.4.10",
+    "jsvectormap": "^1.6.0",
+    "next": "^14.2.3",
+    "next-themes": "^0.4.4",
+    "nextjs-toploader": "^3.7.15",
+    "nodemailer": "^7.0.5",
+    "react": "^18.3.1",
+    "react-apexcharts": "^1.4.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.54.2",
+    "react-quill": "^2.0.0",
+    "react-select": "^5.10.0",
+    "react-signature-canvas": "^1.1.0-alpha.1",
+    "react-table": "^7.8.0",
+    "react-toastify": "^11.0.5",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "tailwind-merge": "^2.6.0",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "@types/nodemailer": "^6.4.17",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "19.0.3",
+    "@types/react-table": "^7.7.20",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.6",
+    "postcss": "^8",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.9.2"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}
+
+
+⚙️ next.config.js:
+⚠️ فایل یافت نشد.
+
+🎨 tailwind.config.js:
+⚠️ فایل یافت نشد.
+
+💻 کدهای app:
+
+
+💻 کدهای pages:
+
+
+🔌 API Routes:

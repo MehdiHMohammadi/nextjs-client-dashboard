@@ -1,0 +1,937 @@
+├── .env.local
+├── .eslintrc.json
+├── .gitignore
+├── .prettierrc
+├── jsvectormap.d.ts
+│   📦 imports: —
+│   📤 exports: jsVectorMap
+│   🧩 components: —
+├── lawfirms.db
+├── next-env.d.ts
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── pnpm-lock.yaml
+├── postcss.config.js
+├── project-1.js
+├── project-info-02.js
+├── project-info.js
+│   📦 imports: fs, path
+│   📤 exports: —
+│   🧩 components: —
+├── project-info.txt
+├── public
+│   └── images
+│       ├── best-value-banner.png
+│       ├── brand
+│       │   ├── brand-01.svg
+│       │   ├── brand-02.svg
+│       │   ├── brand-03.svg
+│       │   ├── brand-04.svg
+│       │   ├── brand-05.svg
+│       │   ├── brand-06.svg
+│       │   ├── brand-07.svg
+│       │   ├── brand-08.svg
+│       │   ├── brand-09.svg
+│       │   ├── brand-10.svg
+│       │   ├── brand-11.svg
+│       │   ├── brand-12.svg
+│       │   ├── brand-13.svg
+│       │   ├── brand-14.svg
+│       │   ├── brand-15.svg
+│       │   ├── brand-16.svg
+│       │   ├── brand-17.svg
+│       │   ├── brand-18.svg
+│       │   ├── brand-19.svg
+│       │   └── brand-20.svg
+│       ├── cards
+│       │   ├── cards-01.png
+│       │   ├── cards-02.png
+│       │   ├── cards-03.png
+│       │   ├── cards-04.png
+│       │   ├── cards-05.png
+│       │   └── cards-06.png
+│       ├── carousel
+│       │   ├── carousel-01.jpg
+│       │   ├── carousel-02.jpg
+│       │   └── carousel-03.jpg
+│       ├── country
+│       │   ├── country-01.svg
+│       │   ├── country-02.svg
+│       │   ├── country-03.svg
+│       │   ├── country-04.svg
+│       │   ├── country-05.svg
+│       │   └── country-06.svg
+│       ├── cover
+│       │   ├── cover-01.png
+│       │   ├── cover-02.jpg
+│       │   ├── cover-03.jpg
+│       │   ├── cover-04.jpg
+│       │   └── cover-05.jpg
+│       ├── favicon.ico
+│       ├── favicon.webp
+│       ├── grids
+│       │   ├── grid-01.svg
+│       │   └── grid-02.svg
+│       ├── icon
+│       │   ├── icon-arrow-down.svg
+│       │   ├── icon-calendar.svg
+│       │   ├── icon-chat.svg
+│       │   ├── icon-copy-alt.svg
+│       │   ├── icon-moon.svg
+│       │   └── icon-sun.svg
+│       ├── illustration
+│       │   ├── illustration-01.svg
+│       │   ├── illustration-02.svg
+│       │   ├── illustration-03.svg
+│       │   └── illustration-04.svg
+│       ├── loading.gif
+│       ├── logo
+│       │   ├── dark.webp
+│       │   ├── logo-icon.svg
+│       │   ├── logo-icon1.svg
+│       │   ├── logo-icon2.svg
+│       │   ├── logo.svg
+│       │   ├── logo.webp
+│       │   ├── logo1.svg
+│       │   ├── main.webp
+│       │   ├── _.svg
+│       │   └── _logo-dark.svg
+│       ├── networks
+│       │   ├── Google_black.svg
+│       │   ├── Instagram_black.svg
+│       │   ├── Pinterest_black.svg
+│       │   ├── Telegram_black.svg
+│       │   ├── Tik Tok_black.svg
+│       │   ├── Twitter_black.svg
+│       │   ├── WhatsApp_black.svg
+│       │   └── Youtube_black.svg
+│       ├── product
+│       │   ├── product-01.png
+│       │   ├── product-02.png
+│       │   ├── product-03.png
+│       │   ├── product-04.png
+│       │   └── product-thumb.png
+│       ├── task
+│       │   └── task-01.jpg
+│       ├── team
+│       │   ├── team-01.png
+│       │   ├── team-02.png
+│       │   ├── team-03.png
+│       │   ├── team-04.png
+│       │   ├── team-05.png
+│       │   ├── team-06.png
+│       │   ├── team-07.png
+│       │   └── team-08.png
+│       ├── todo
+│       │   ├── dribble.svg
+│       │   ├── linkdin.svg
+│       │   └── uideck.svg
+│       └── user
+│           ├── default-avatar.png
+│           ├── default-avatar.svg
+│           ├── user-01.png
+│           ├── user-02.png
+│           ├── user-03.png
+│           ├── user-04.png
+│           ├── user-05.png
+│           ├── user-06.png
+│           ├── user-07.png
+│           ├── user-08.png
+│           ├── user-09.png
+│           ├── user-10.png
+│           ├── user-11.png
+│           ├── user-12.png
+│           ├── user-13.png
+│           ├── user-14.png
+│           ├── user-15.png
+│           ├── user-16.png
+│           ├── user-17.png
+│           ├── user-18.png
+│           ├── user-19.png
+│           ├── user-20.png
+│           ├── user-21.png
+│           ├── user-22.png
+│           ├── user-23.png
+│           ├── user-24.png
+│           ├── user-25.png
+│           ├── user-26.png
+│           ├── user-27.png
+│           ├── user-28.png
+│           ├── user-29.png
+│           └── user-30.png
+├── README.md
+├── src
+│   ├── actions
+│   │   └── auth.ts
+│   │       📦 imports: @/lib/supabase/server, next/navigation
+│   │       📤 exports: async, async, async
+│   │       🧩 components: —
+│   ├── api
+│   │   └── config.ts
+│   │       📦 imports: @/types/supabase, @supabase/ssr, next/dist/server/web/spec-extension/adapters/request-cookies
+│   │       📤 exports: supabaseClient, supabaseServerClient
+│   │       🧩 components: —
+│   ├── app
+│   │   ├── (auth)
+│   │   │   ├── callback
+│   │   │   │   └── route.ts
+│   │   │   │       📦 imports: next/headers, next/server, @supabase/ssr
+│   │   │   │       📤 exports: async
+│   │   │   │       🧩 components: GET
+│   │   │   ├── confirm
+│   │   │   │   └── route.ts
+│   │   │   │       📦 imports: @/lib/supabase/server, @supabase/supabase-js, next/navigation, next/server
+│   │   │   │       📤 exports: async
+│   │   │   │       🧩 components: GET
+│   │   │   ├── error
+│   │   │   │   └── page.tsx
+│   │   │   │       📦 imports: —
+│   │   │   │       📤 exports: function
+│   │   │   │       🧩 components: ErrorPage
+│   │   │   ├── forgot-password
+│   │   │   │   ├── forgot-password-form.tsx
+│   │   │   │   │   📦 imports: @/lib/utils, @/lib/supabase/client, @/components/ui/button, @/components/ui/card, @/components/ui/input, @/components/ui/label, next/link, react
+│   │   │   │   │   📤 exports: ForgotPasswordForm
+│   │   │   │   │   🧩 components: ForgotPasswordForm
+│   │   │   │   └── page.tsx
+│   │   │   │       📦 imports: ./forgot-password-form
+│   │   │   │       📤 exports: function
+│   │   │   │       🧩 components: Page
+│   │   │   └── login
+│   │   │       └── page.tsx
+│   │   │           📦 imports: next, next/image, next/link, @/components/Auth/Signin
+│   │   │           📤 exports: metadata, function
+│   │   │           🧩 components: SignIn
+│   │   ├── (home)
+│   │   │   ├── fetch.ts
+│   │   │   │   📦 imports: —
+│   │   │   │   📤 exports: async, async
+│   │   │   │   🧩 components: —
+│   │   │   ├── page.tsx
+│   │   │   │   📦 imports: @/components/Charts/payments-overview, @/components/Charts/used-devices, @/components/Charts/weeks-profit, @/components/Tables/top-channels, @/components/Histories/top-histories, @/components/Histories/top-histories/skeleton, @/utils/timeframe-extractor, react, ./_components/chats-card, ./_components/overview-cards, ./_components/overview-cards/skeleton, ./_components/region-labels
+│   │   │   │   📤 exports: async
+│   │   │   │   🧩 components: Home
+│   │   │   └── _components
+│   │   │       ├── chats-card.tsx
+│   │   │       │   📦 imports: @/assets/icons, @/lib/format-message-time, @/lib/utils, next/image, next/link, ../fetch
+│   │   │       │   📤 exports: async
+│   │   │       │   🧩 components: ChatsCard
+│   │   │       ├── overview-cards
+│   │   │       │   ├── card.tsx
+│   │   │       │   │   📦 imports: @/assets/icons, @/lib/utils, react
+│   │   │       │   │   📤 exports: OverviewCard
+│   │   │       │   │   🧩 components: OverviewCard
+│   │   │       │   ├── icons.tsx
+│   │   │       │   │   📦 imports: react
+│   │   │       │   │   📤 exports: Views, Profit, Product, Users
+│   │   │       │   │   🧩 components: Views, Profit, Product, Users
+│   │   │       │   ├── index.tsx
+│   │   │       │   │   📦 imports: @/lib/format-number, ../../fetch, ./card, ./icons
+│   │   │       │   │   📤 exports: async
+│   │   │       │   │   🧩 components: OverviewCardsGroup
+│   │   │       │   └── skeleton.tsx
+│   │   │       │       📦 imports: @/components/ui/skeleton
+│   │   │       │       📤 exports: OverviewCardsSkeleton
+│   │   │       │       🧩 components: OverviewCardsSkeleton
+│   │   │       └── region-labels
+│   │   │           ├── index.tsx
+│   │   │           │   📦 imports: next/dynamic
+│   │   │           │   📤 exports: RegionLabels
+│   │   │           │   🧩 components: Map, RegionLabels
+│   │   │           └── map.tsx
+│   │   │               📦 imports: jsvectormap, react
+│   │   │               📤 exports: function
+│   │   │               🧩 components: Map
+│   │   ├── (pages)
+│   │   │   ├── calendar
+│   │   │   │   └── page.tsx
+│   │   │   │       📦 imports: @/components/Breadcrumbs/Breadcrumb, @/components/CalenderBox, next
+│   │   │   │       📤 exports: metadata, CalendarPage
+│   │   │   │       🧩 components: CalendarPage
+│   │   │   ├── charts
+│   │   │   │   └── basic-chart
+│   │   │   │       └── page.tsx
+│   │   │   │           📦 imports: @/components/Breadcrumbs/Breadcrumb, @/components/Charts/campaign-visitors, @/components/Charts/used-devices, @/utils/timeframe-extractor, next
+│   │   │   │           📤 exports: metadata, async
+│   │   │   │           🧩 components: Page
+│   │   │   ├── dashboard
+│   │   │   │   └── page.tsx
+│   │   │   │       📦 imports: @/components/ProtectedRoute, @/lib/supabase/server, next/navigation
+│   │   │   │       📤 exports: function, async
+│   │   │   │       🧩 components: Dashboard, Dashboard
+│   │   │   ├── file-flow
+│   │   │   │   └── page.tsx
+│   │   │   │       📦 imports: @/components/Breadcrumbs/Breadcrumb, react, next/head
+│   │   │   │       📤 exports: function
+│   │   │   │       🧩 components: FileFlow
+│   │   │   ├── history
+│   │   │   │   └── page.tsx
+│   │   │   │       📦 imports: react, @/lib/supabaseClient
+│   │   │   │       📤 exports: function
+│   │   │   │       🧩 components: MessagesPage
+│   │   │   ├── profile
+│   │   │   │   ├── layout.tsx
+│   │   │   │   │   📦 imports: react, next
+│   │   │   │   │   📤 exports: metadata, function
+│   │   │   │   │   🧩 components: Layout
+│   │   │   │   ├── page.tsx
+│   │   │   │   │   📦 imports: @/components/Breadcrumbs/Breadcrumb, next/image, react, ./_components/icons, ./_components/social-accounts, @/lib/supabaseClient, ./_components/contact, ./_components/EmailForm, ./_components/Test, @/lib/supabase/client, @/contexts/EmailContext, @/lib/supabase/client
+│   │   │   │   │   📤 exports: function
+│   │   │   │   │   🧩 components: Page
+│   │   │   │   └── _components
+│   │   │   │       ├── contact.tsx
+│   │   │   │       │   📦 imports: react, @/contexts/EmailContext
+│   │   │   │       │   📤 exports: function
+│   │   │   │       │   🧩 components: ContactPage
+│   │   │   │       ├── EmailForm.tsx
+│   │   │   │       │   📦 imports: react
+│   │   │   │       │   📤 exports: function
+│   │   │   │       │   🧩 components: EmailForm
+│   │   │   │       ├── icons.tsx
+│   │   │   │       │   📦 imports: react
+│   │   │   │       │   📤 exports: type, CameraIcon, FacebookIcon, XIcon, LinkedInIcon, DribbleIcon, GitHubIcon
+│   │   │   │       │   🧩 components: CameraIcon, FacebookIcon, XIcon, LinkedInIcon, DribbleIcon, GitHubIcon
+│   │   │   │       ├── social-accounts.tsx
+│   │   │   │       │   📦 imports: next/link, ./icons
+│   │   │   │       │   📤 exports: SocialAccounts
+│   │   │   │       │   🧩 components: ACCOUNTS, SocialAccounts
+│   │   │   │       └── Test.tsx
+│   │   │   │           📦 imports: @supabase/supabase-js
+│   │   │   │           📤 exports: TestFunction
+│   │   │   │           🧩 components: TestFunction
+│   │   │   ├── settings
+│   │   │   │   ├── page.tsx
+│   │   │   │   │   📦 imports: @/components/Breadcrumbs/Breadcrumb, next, ./_components/personal-info, ./_components/upload-photo
+│   │   │   │   │   📤 exports: metadata, function
+│   │   │   │   │   🧩 components: SettingsPage
+│   │   │   │   └── _components
+│   │   │   │       ├── personal-info.tsx
+│   │   │   │       │   📦 imports: react, @/assets/icons, @/components/FormElements/InputGroup, @/components/FormElements/InputGroup/text-area, @/components/Layouts/showcase-section, @/lib/supabaseClient, @supabase/supabase-js
+│   │   │   │       │   📤 exports: PersonalInfoForm
+│   │   │   │       │   🧩 components: PersonalInfoForm
+│   │   │   │       └── upload-photo.tsx
+│   │   │   │           📦 imports: react, @/assets/icons, @/components/Layouts/showcase-section, next/image, @/lib/supabase/client, @/lib/supabaseClient, @supabase/supabase-js
+│   │   │   │           📤 exports: UploadPhotoForm
+│   │   │   │           🧩 components: UploadPhotoForm
+│   │   │   └── smart-lawyer
+│   │   │       └── page.tsx
+│   │   │           📦 imports: react, @/components/Breadcrumbs/Breadcrumb, @/lib/supabaseClient, next
+│   │   │           📤 exports: metadata, SmartLawyer
+│   │   │           🧩 components: SmartLawyer
+│   │   ├── api
+│   │   │   ├── lawfirms
+│   │   │   │   └── route.ts
+│   │   │   │       📦 imports: next/server, sqlite3
+│   │   │   │       📤 exports: runtime, async, async
+│   │   │   │       🧩 components: GET, POST
+│   │   │   ├── otp
+│   │   │   │   └── route.js
+│   │   │   │       📦 imports: next/server
+│   │   │   │       📤 exports: async, async
+│   │   │   │       🧩 components: POST, GET
+│   │   │   └── send-email
+│   │   │       └── route.ts
+│   │   │           📦 imports: next/server, @supabase/supabase-js
+│   │   │           📤 exports: async
+│   │   │           🧩 components: POST
+│   │   ├── favicon.ico
+│   │   ├── favicon.webp
+│   │   ├── forms
+│   │   │   ├── form-elements
+│   │   │   │   └── page.tsx
+│   │   │   │       📦 imports: next, @/assets/icons, @/components/Breadcrumbs/Breadcrumb, @/components/FormElements/DatePicker/DatePickerOne, @/components/FormElements/DatePicker/DatePickerTwo, @/components/FormElements/InputGroup, @/components/FormElements/InputGroup/text-area, @/components/FormElements/MultiSelect, @/components/FormElements/checkbox, @/components/FormElements/radio, @/components/FormElements/select, @/components/FormElements/switch, @/components/Layouts/showcase-section
+│   │   │   │       📤 exports: metadata, function
+│   │   │   │       🧩 components: FormElementsPage
+│   │   │   ├── form-law
+│   │   │   │   ├── page.tsx
+│   │   │   │   │   📦 imports: @/components/Breadcrumbs/Breadcrumb, next, ./_components/contact-form, ./_components/sign-in-form, ./_components/sign-up-form
+│   │   │   │   │   📤 exports: metadata, function
+│   │   │   │   │   🧩 components: Page
+│   │   │   │   └── _components
+│   │   │   │       ├── contact-form.tsx
+│   │   │   │       │   📦 imports: @/components/FormElements/InputGroup, @/components/FormElements/InputGroup/text-area, @/components/FormElements/select, @/components/Layouts/showcase-section
+│   │   │   │       │   📤 exports: LawForm
+│   │   │   │       │   🧩 components: LawForm
+│   │   │   │       ├── sign-in-form.tsx
+│   │   │   │       │   📦 imports: @/components/FormElements/checkbox, @/components/FormElements/InputGroup, @/components/Layouts/showcase-section, next/link
+│   │   │   │       │   📤 exports: SignInForm
+│   │   │   │       │   🧩 components: SignInForm
+│   │   │   │       └── sign-up-form.tsx
+│   │   │   │           📦 imports: @/components/FormElements/InputGroup, @/components/Layouts/showcase-section
+│   │   │   │           📤 exports: SignUpForm
+│   │   │   │           🧩 components: SignUpForm
+│   │   │   ├── form-law1
+│   │   │   │   └── page.tsx
+│   │   │   │       📦 imports: react, next/router
+│   │   │   │       📤 exports: FirmRegistrationForm
+│   │   │   │       🧩 components: FirmRegistrationForm
+│   │   │   └── form-layout
+│   │   │       ├── page.tsx
+│   │   │       │   📦 imports: @/components/Breadcrumbs/Breadcrumb, next, ./_components/contact-form, ./_components/sign-in-form, ./_components/sign-up-form
+│   │   │       │   📤 exports: metadata, function
+│   │   │       │   🧩 components: Page
+│   │   │       └── _components
+│   │   │           ├── contact-form.tsx
+│   │   │           │   📦 imports: @/components/FormElements/InputGroup, @/components/FormElements/InputGroup/text-area, @/components/FormElements/select, @/components/Layouts/showcase-section
+│   │   │           │   📤 exports: ContactForm
+│   │   │           │   🧩 components: ContactForm
+│   │   │           ├── sign-in-form.tsx
+│   │   │           │   📦 imports: @/components/FormElements/checkbox, @/components/FormElements/InputGroup, @/components/Layouts/showcase-section, next/link
+│   │   │           │   📤 exports: SignInForm
+│   │   │           │   🧩 components: SignInForm
+│   │   │           └── sign-up-form.tsx
+│   │   │               📦 imports: @/components/FormElements/InputGroup, @/components/Layouts/showcase-section
+│   │   │               📤 exports: SignUpForm
+│   │   │               🧩 components: SignUpForm
+│   │   ├── layout.tsx
+│   │   │   📦 imports: react, next/font/google, next/font/local, @/components/ToastProvider, @/contexts/EmailContext, ./LayoutClientWrapper
+│   │   │   📤 exports: function
+│   │   │   🧩 components: RootLayout
+│   │   ├── LayoutClientWrapper.tsx
+│   │   │   📦 imports: next/navigation, @/components/Layouts/sidebar, @/components/Layouts/header, nextjs-toploader, @/app/providers, react
+│   │   │   📤 exports: function
+│   │   │   🧩 components: LayoutClientWrapper
+│   │   ├── loading.gif
+│   │   ├── providers.tsx
+│   │   │   📦 imports: @/components/Layouts/sidebar/sidebar-context, next-themes
+│   │   │   📤 exports: Providers
+│   │   │   🧩 components: Providers
+│   │   ├── tables
+│   │   │   └── page.tsx
+│   │   │       📦 imports: @/components/Breadcrumbs/Breadcrumb, @/components/Tables/invoice-table, @/components/Tables/top-channels, @/components/Tables/top-channels/skeleton, @/components/Tables/top-products, @/components/Tables/top-products/skeleton, next, react
+│   │   │       📤 exports: metadata, TablesPage
+│   │   │       🧩 components: TablesPage
+│   │   └── ui-elements
+│   │       ├── alerts
+│   │       │   └── page.tsx
+│   │       │       📦 imports: react, @/components/ui-elements/alert, @/components/Breadcrumbs/Breadcrumb, next
+│   │       │       📤 exports: page, metadata, function
+│   │       │       🧩 components: Page
+│   │       └── buttons
+│   │           └── page.tsx
+│   │               📦 imports: @/assets/icons, @/components/Breadcrumbs/Breadcrumb, @/components/Layouts/showcase-section, @/components/ui-elements/button, next
+│   │               📤 exports: metadata, function
+│   │               🧩 components: Page
+│   ├── assets
+│   │   ├── icons.tsx
+│   │   │   📦 imports: @/types/icon-props
+│   │   │   📤 exports: SearchIcon, CloseIcon, ArrowLeftIcon, ChevronUpIcon, ArrowUpIcon, ArrowDownIcon, DotIcon, TrendingUpIcon, CheckIcon, XIcon, GlobeIcon, TrashIcon, MessageOutlineIcon, EmailIcon, PasswordIcon, GoogleIcon, UserIcon, CallIcon, PencilSquareIcon, UploadIcon
+│   │   │   🧩 components: SearchIcon, CloseIcon, ArrowLeftIcon, ChevronUpIcon, ArrowUpIcon, ArrowDownIcon, DotIcon, TrendingUpIcon, CheckIcon, XIcon, GlobeIcon, TrashIcon, MessageOutlineIcon, EmailIcon, PasswordIcon, GoogleIcon, UserIcon, CallIcon, PencilSquareIcon, UploadIcon
+│   │   └── logos
+│   │       ├── Conclusion.svg
+│   │       ├── dark.svg
+│   │       ├── dark.webp
+│   │       ├── dark00.webp
+│   │       ├── facebook.svg
+│   │       ├── github.svg
+│   │       ├── google.svg
+│   │       ├── index.ts
+│   │       ├── logo.webp
+│   │       ├── main.svg
+│   │       ├── main.webp
+│   │       ├── vimeo.svg
+│   │       └── x.svg
+│   ├── components
+│   │   ├── Auth
+│   │   │   ├── GoogleSigninButton.tsx
+│   │   │   │   📦 imports: react, @/lib/supabaseClient, @/lib/supabase/client, next/navigation, @/assets/icons
+│   │   │   │   📤 exports: function
+│   │   │   │   🧩 components: GoogleSigninButton
+│   │   │   ├── Signin
+│   │   │   │   └── index.tsx
+│   │   │   │       📦 imports: next/link, ../GoogleSigninButton, ../SigninWithPassword
+│   │   │   │       📤 exports: function
+│   │   │   │       🧩 components: Signin
+│   │   │   └── SigninWithPassword.tsx
+│   │   │       📦 imports: @/assets/icons, react, ../FormElements/InputGroup, next/navigation, framer-motion, react-toastify, @supabase/supabase-js, @/lib/supabase/client
+│   │   │       📤 exports: function
+│   │   │       🧩 components: SigninWithPassword
+│   │   ├── Breadcrumbs
+│   │   │   └── Breadcrumb.tsx
+│   │   │       📦 imports: next/link
+│   │   │       📤 exports: Breadcrumb
+│   │   │       🧩 components: Breadcrumb
+│   │   ├── CalenderBox
+│   │   │   └── index.tsx
+│   │   │       📦 imports: —
+│   │   │       📤 exports: CalendarBox
+│   │   │       🧩 components: CalendarBox
+│   │   ├── Charts
+│   │   │   ├── campaign-visitors
+│   │   │   │   ├── chart.tsx
+│   │   │   │   │   📦 imports: apexcharts, next/dynamic
+│   │   │   │   │   📤 exports: CampaignVisitorsChart
+│   │   │   │   │   🧩 components: Chart, CampaignVisitorsChart
+│   │   │   │   └── index.tsx
+│   │   │   │       📦 imports: @/assets/icons, @/lib/format-number, @/lib/utils, @/services/charts.services, ./chart
+│   │   │   │       📤 exports: async
+│   │   │   │       🧩 components: CampaignVisitors
+│   │   │   ├── payments-overview
+│   │   │   │   ├── chart.tsx
+│   │   │   │   │   📦 imports: @/hooks/use-mobile, apexcharts, next/dynamic
+│   │   │   │   │   📤 exports: PaymentsOverviewChart
+│   │   │   │   │   🧩 components: Chart, PaymentsOverviewChart
+│   │   │   │   └── index.tsx
+│   │   │   │       📦 imports: @/components/period-picker, @/lib/format-number, @/lib/utils, @/services/charts.services, ./chart
+│   │   │   │       📤 exports: async
+│   │   │   │       🧩 components: PaymentsOverview
+│   │   │   ├── used-devices
+│   │   │   │   ├── chart.tsx
+│   │   │   │   │   📦 imports: @/lib/format-number, apexcharts, next/dynamic
+│   │   │   │   │   📤 exports: DonutChart
+│   │   │   │   │   🧩 components: Chart, DonutChart
+│   │   │   │   └── index.tsx
+│   │   │   │       📦 imports: @/components/period-picker, @/lib/utils, @/services/charts.services, ./chart
+│   │   │   │       📤 exports: async
+│   │   │   │       🧩 components: UsedDevices
+│   │   │   └── weeks-profit
+│   │   │       ├── chart.tsx
+│   │   │       │   📦 imports: apexcharts, next/dynamic
+│   │   │       │   📤 exports: WeeksProfitChart
+│   │   │       │   🧩 components: Chart, WeeksProfitChart
+│   │   │       └── index.tsx
+│   │   │           📦 imports: @/components/period-picker, @/lib/utils, @/services/charts.services, ./chart
+│   │   │           📤 exports: async
+│   │   │           🧩 components: WeeksProfit
+│   │   ├── FileFlow
+│   │   │   ├── fetch.ts
+│   │   │   │   📦 imports: @/assets/logos
+│   │   │   │   📤 exports: async, async, async
+│   │   │   │   🧩 components: —
+│   │   │   ├── icons.tsx
+│   │   │   │   📦 imports: @/types/icon-props
+│   │   │   │   📤 exports: PreviewIcon, DownloadIcon, ConclusionIcon
+│   │   │   │   🧩 components: PreviewIcon, DownloadIcon, ConclusionIcon
+│   │   │   ├── invoice-table.tsx
+│   │   │   │   📦 imports: @/assets/icons, ./icons, @/components/ui/table, @/lib/utils, dayjs, ./fetch
+│   │   │   │   📤 exports: async
+│   │   │   │   🧩 components: InvoiceTable
+│   │   │   └── top-fileflow
+│   │   │       ├── index.tsx
+│   │   │       │   📦 imports: @/assets/icons, ../icons, @/components/ui/table, @/lib/format-number, @/lib/utils, next/image, ../fetch
+│   │   │       │   📤 exports: async
+│   │   │       │   🧩 components: FileFlows
+│   │   │       └── skeleton.tsx
+│   │   │           📦 imports: @/components/ui/skeleton, @/components/ui/table
+│   │   │           📤 exports: TopHistoriesSkeleton
+│   │   │           🧩 components: TopHistoriesSkeleton
+│   │   ├── FormElements
+│   │   │   ├── checkbox.tsx
+│   │   │   │   📦 imports: @/assets/icons, @/lib/utils, react
+│   │   │   │   📤 exports: Checkbox
+│   │   │   │   🧩 components: Checkbox
+│   │   │   ├── Checkboxes
+│   │   │   │   ├── CheckboxFive.tsx
+│   │   │   │   │   📦 imports: react
+│   │   │   │   │   📤 exports: CheckboxFive
+│   │   │   │   │   🧩 components: CheckboxFive
+│   │   │   │   ├── CheckboxFour.tsx
+│   │   │   │   │   📦 imports: react
+│   │   │   │   │   📤 exports: CheckboxFour
+│   │   │   │   │   🧩 components: CheckboxFour
+│   │   │   │   ├── CheckboxOne.tsx
+│   │   │   │   │   📦 imports: react
+│   │   │   │   │   📤 exports: CheckboxOne
+│   │   │   │   │   🧩 components: CheckboxOne
+│   │   │   │   ├── CheckboxThree.tsx
+│   │   │   │   │   📦 imports: react
+│   │   │   │   │   📤 exports: CheckboxThree
+│   │   │   │   │   🧩 components: CheckboxThree
+│   │   │   │   └── CheckboxTwo.tsx
+│   │   │   │       📦 imports: react
+│   │   │   │       📤 exports: CheckboxTwo
+│   │   │   │       🧩 components: CheckboxTwo
+│   │   │   ├── DatePicker
+│   │   │   │   ├── DatePickerOne.tsx
+│   │   │   │   │   📦 imports: @/components/Layouts/sidebar/icons, flatpickr, react
+│   │   │   │   │   📤 exports: DatePickerOne
+│   │   │   │   │   🧩 components: DatePickerOne
+│   │   │   │   └── DatePickerTwo.tsx
+│   │   │   │       📦 imports: @/assets/icons, flatpickr, react
+│   │   │   │       📤 exports: DatePickerTwo
+│   │   │   │       🧩 components: DatePickerTwo
+│   │   │   ├── InputGroup
+│   │   │   │   ├── index.tsx
+│   │   │   │   │   📦 imports: @/lib/utils, react
+│   │   │   │   │   📤 exports: InputGroup
+│   │   │   │   │   🧩 components: InputGroup
+│   │   │   │   └── text-area.tsx
+│   │   │   │       📦 imports: @/lib/utils, react
+│   │   │   │       📤 exports: TextAreaGroup
+│   │   │   │       🧩 components: TextAreaGroup
+│   │   │   ├── MultiSelect.tsx
+│   │   │   │   📦 imports: react
+│   │   │   │   📤 exports: MultiSelect
+│   │   │   │   🧩 components: MultiSelect
+│   │   │   ├── radio.tsx
+│   │   │   │   📦 imports: @/lib/utils, react
+│   │   │   │   📤 exports: RadioInput
+│   │   │   │   🧩 components: RadioInput
+│   │   │   ├── select.tsx
+│   │   │   │   📦 imports: @/assets/icons, @/lib/utils, react
+│   │   │   │   📤 exports: Select
+│   │   │   │   🧩 components: Select
+│   │   │   ├── switch.tsx
+│   │   │   │   📦 imports: @/assets/icons, @/lib/utils, react
+│   │   │   │   📤 exports: Switch
+│   │   │   │   🧩 components: Switch
+│   │   │   └── Switchers
+│   │   │       ├── SwitcherFour.tsx
+│   │   │       │   📦 imports: react
+│   │   │       │   📤 exports: SwitcherFour
+│   │   │       │   🧩 components: SwitcherFour
+│   │   │       ├── SwitcherOne.tsx
+│   │   │       │   📦 imports: react
+│   │   │       │   📤 exports: SwitcherOne
+│   │   │       │   🧩 components: SwitcherOne
+│   │   │       ├── SwitcherThree.tsx
+│   │   │       │   📦 imports: react
+│   │   │       │   📤 exports: SwitcherThree
+│   │   │       │   🧩 components: SwitcherThree
+│   │   │       └── SwitcherTwo.tsx
+│   │   │           📦 imports: react
+│   │   │           📤 exports: SwitcherTwo
+│   │   │           🧩 components: SwitcherTwo
+│   │   ├── Histories
+│   │   │   ├── fetch.ts
+│   │   │   │   📦 imports: @/assets/logos
+│   │   │   │   📤 exports: async, async, async
+│   │   │   │   🧩 components: —
+│   │   │   ├── icons.tsx
+│   │   │   │   📦 imports: @/types/icon-props
+│   │   │   │   📤 exports: PreviewIcon, DownloadIcon, ConclusionIcon
+│   │   │   │   🧩 components: PreviewIcon, DownloadIcon, ConclusionIcon
+│   │   │   ├── invoice-table.tsx
+│   │   │   │   📦 imports: @/assets/icons, ./icons, @/components/ui/table, @/lib/utils, dayjs, ./fetch
+│   │   │   │   📤 exports: async
+│   │   │   │   🧩 components: InvoiceTable
+│   │   │   ├── top-histories
+│   │   │   │   ├── index.tsx
+│   │   │   │   │   📦 imports: @/assets/icons, ../icons, @/components/ui/table, @/lib/format-number, @/lib/utils, next/image, ../fetch
+│   │   │   │   │   📤 exports: async
+│   │   │   │   │   🧩 components: TopHistories
+│   │   │   │   └── skeleton.tsx
+│   │   │   │       📦 imports: @/components/ui/skeleton, @/components/ui/table
+│   │   │   │       📤 exports: TopHistoriesSkeleton
+│   │   │   │       🧩 components: TopHistoriesSkeleton
+│   │   │   └── top-products
+│   │   │       ├── index.tsx
+│   │   │       │   📦 imports: @/components/ui/table, next/image, ../fetch
+│   │   │       │   📤 exports: async
+│   │   │       │   🧩 components: TopProducts
+│   │   │       └── skeleton.tsx
+│   │   │           📦 imports: @/components/ui/skeleton, @/components/ui/table
+│   │   │           📤 exports: TopProductsSkeleton
+│   │   │           🧩 components: TopProductsSkeleton
+│   │   ├── Layouts
+│   │   │   ├── header
+│   │   │   │   ├── icons.tsx
+│   │   │   │   │   📦 imports: @/types/icon-props
+│   │   │   │   │   📤 exports: MenuIcon
+│   │   │   │   │   🧩 components: MenuIcon
+│   │   │   │   ├── index.tsx
+│   │   │   │   │   📦 imports: @/assets/icons, next/image, next/link, ../sidebar/sidebar-context, ./icons, ./notification, ./theme-toggle, ./user-info
+│   │   │   │   │   📤 exports: Header
+│   │   │   │   │   🧩 components: Header
+│   │   │   │   ├── notification
+│   │   │   │   │   ├── icons.tsx
+│   │   │   │   │   │   📦 imports: react
+│   │   │   │   │   │   📤 exports: BellIcon
+│   │   │   │   │   │   🧩 components: BellIcon
+│   │   │   │   │   └── index.tsx
+│   │   │   │   │       📦 imports: @/components/ui/dropdown, @/hooks/use-mobile, @/lib/utils, next/image, next/link, react, ./icons
+│   │   │   │   │       📤 exports: Notification
+│   │   │   │   │       🧩 components: Notification
+│   │   │   │   ├── theme-toggle
+│   │   │   │   │   ├── icons.tsx
+│   │   │   │   │   │   📦 imports: react
+│   │   │   │   │   │   📤 exports: Sun, Moon
+│   │   │   │   │   │   🧩 components: Sun, Moon
+│   │   │   │   │   └── index.tsx
+│   │   │   │   │       📦 imports: @/lib/utils, next-themes, react, ./icons
+│   │   │   │   │       📤 exports: ThemeToggleSwitch
+│   │   │   │   │       🧩 components: THEMES, ThemeToggleSwitch
+│   │   │   │   └── user-info
+│   │   │   │       ├── icons.tsx
+│   │   │   │       │   📦 imports: react
+│   │   │   │       │   📤 exports: UserIcon, SettingsIcon, LogOutIcon
+│   │   │   │       │   🧩 components: UserIcon, SettingsIcon, LogOutIcon
+│   │   │   │       └── index.tsx
+│   │   │   │           📦 imports: react, next/image, next/link, next/navigation, @/lib/utils, @/assets/icons, ./icons, @/components/ui/dropdown, @supabase/supabase-js, @/lib/supabaseClient, @/lib/supabase/client, @supabase/supabase-js
+│   │   │   │           📤 exports: UserInfo
+│   │   │   │           🧩 components: UserInfo
+│   │   │   ├── showcase-section.tsx
+│   │   │   │   📦 imports: @/lib/utils, react
+│   │   │   │   📤 exports: ShowcaseSection
+│   │   │   │   🧩 components: ShowcaseSection
+│   │   │   └── sidebar
+│   │   │       ├── data
+│   │   │       │   ├── index.ts
+│   │   │       │   │   📦 imports: ../icons
+│   │   │       │   │   📤 exports: NAV_DATA
+│   │   │       │   │   🧩 components: NAV_DATA
+│   │   │       │   └── ui-elements-list.ts
+│   │   │       │       📦 imports: —
+│   │   │       │       📤 exports: UI_ELEMENTS
+│   │   │       │       🧩 components: UI_ELEMENTS
+│   │   │       ├── icons.tsx
+│   │   │       │   📦 imports: react
+│   │   │       │   📤 exports: type, ChevronUp, HomeIcon, Calendar, User, Alphabet, Table, PieChart, FourCircle, Authentication, ArrowLeftIcon, chatIcon, Send, Translate, FolderOpen, Chats, History, Dashboard, Conect
+│   │   │       │   🧩 components: ChevronUp, HomeIcon, Calendar, User, Alphabet, Table, PieChart, FourCircle, Authentication, ArrowLeftIcon, Send, Translate, FolderOpen, Chats, History, Dashboard, Conect
+│   │   │       ├── index.tsx
+│   │   │       │   📦 imports: @/components/logo, @/lib/utils, next/link, next/navigation, react, ./data, ./icons, ./menu-item, ./sidebar-context
+│   │   │       │   📤 exports: Sidebar
+│   │   │       │   🧩 components: Sidebar
+│   │   │       ├── menu-item.tsx
+│   │   │       │   📦 imports: @/lib/utils, class-variance-authority, next/link, ./sidebar-context
+│   │   │       │   📤 exports: MenuItem
+│   │   │       │   🧩 components: MenuItem
+│   │   │       └── sidebar-context.tsx
+│   │   │           📦 imports: @/hooks/use-mobile, react
+│   │   │           📤 exports: useSidebarContext, SidebarProvider
+│   │   │           🧩 components: SidebarContext, SidebarProvider
+│   │   ├── logo.tsx
+│   │   │   📦 imports: @/assets/logos/dark.webp, @/assets/logos/main.webp, next/image
+│   │   │   📤 exports: Logo
+│   │   │   🧩 components: Logo
+│   │   ├── period-picker.tsx
+│   │   │   📦 imports: @/assets/icons, @/lib/utils, next/navigation, react, ./ui/dropdown, uuid
+│   │   │   📤 exports: PeriodPicker
+│   │   │   🧩 components: PARAM_KEY, PeriodPicker
+│   │   ├── ProtectedRoute
+│   │   │   └── index.js
+│   │   │       📦 imports: react, @/lib/supabase/client, next/navigation
+│   │   │       📤 exports: function
+│   │   │       🧩 components: ProtectedRoute
+│   │   ├── Tables
+│   │   │   ├── fetch.ts
+│   │   │   │   📦 imports: @/assets/logos
+│   │   │   │   📤 exports: async, async, async
+│   │   │   │   🧩 components: —
+│   │   │   ├── icons.tsx
+│   │   │   │   📦 imports: @/types/icon-props
+│   │   │   │   📤 exports: PreviewIcon, DownloadIcon
+│   │   │   │   🧩 components: PreviewIcon, DownloadIcon
+│   │   │   ├── invoice-table.tsx
+│   │   │   │   📦 imports: @/assets/icons, @/components/ui/table, @/lib/utils, dayjs, ./fetch, ./icons
+│   │   │   │   📤 exports: async
+│   │   │   │   🧩 components: InvoiceTable
+│   │   │   ├── top-channels
+│   │   │   │   ├── index.tsx
+│   │   │   │   │   📦 imports: @/components/ui/table, @/lib/format-number, @/lib/utils, next/image, ../fetch
+│   │   │   │   │   📤 exports: async
+│   │   │   │   │   🧩 components: TopChannels
+│   │   │   │   └── skeleton.tsx
+│   │   │   │       📦 imports: @/components/ui/skeleton, @/components/ui/table
+│   │   │   │       📤 exports: TopChannelsSkeleton
+│   │   │   │       🧩 components: TopChannelsSkeleton
+│   │   │   └── top-products
+│   │   │       ├── index.tsx
+│   │   │       │   📦 imports: @/components/ui/table, next/image, ../fetch
+│   │   │       │   📤 exports: async
+│   │   │       │   🧩 components: TopProducts
+│   │   │       └── skeleton.tsx
+│   │   │           📦 imports: @/components/ui/skeleton, @/components/ui/table
+│   │   │           📤 exports: TopProductsSkeleton
+│   │   │           🧩 components: TopProductsSkeleton
+│   │   ├── ToastProvider
+│   │   │   └── index.tsx
+│   │   │       📦 imports: react-toastify
+│   │   │       📤 exports: function
+│   │   │       🧩 components: ToastProvider
+│   │   ├── ui
+│   │   │   ├── badge.tsx
+│   │   │   │   📦 imports: react, class-variance-authority, @/lib/utils
+│   │   │   │   📤 exports: interface
+│   │   │   │   🧩 components: Badge
+│   │   │   ├── card.tsx
+│   │   │   │   📦 imports: react, @/lib/utils
+│   │   │   │   📤 exports: —
+│   │   │   │   🧩 components: Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter
+│   │   │   ├── dropdown.tsx
+│   │   │   │   📦 imports: @/hooks/use-click-outside, @/lib/utils, @/types/set-state-action-type, react
+│   │   │   │   📤 exports: Dropdown, DropdownContent, DropdownTrigger, DropdownClose
+│   │   │   │   🧩 components: DropdownContext, Dropdown, DropdownContent, DropdownTrigger, DropdownClose
+│   │   │   ├── input.tsx
+│   │   │   │   📦 imports: react, @/lib/utils
+│   │   │   │   📤 exports: —
+│   │   │   │   🧩 components: Input
+│   │   │   ├── Loading.tsx
+│   │   │   │   📦 imports: react
+│   │   │   │   📤 exports: Loading
+│   │   │   │   🧩 components: Loading
+│   │   │   ├── skeleton.tsx
+│   │   │   │   📦 imports: @/lib/utils
+│   │   │   │   📤 exports: Skeleton
+│   │   │   │   🧩 components: Skeleton
+│   │   │   └── table.tsx
+│   │   │       📦 imports: @/lib/utils, react
+│   │   │       📤 exports: Table, TableHeader, TableBody, TableFooter, TableRow, TableHead, TableCell
+│   │   │       🧩 components: Table, TableHeader, TableBody, TableFooter, TableRow, TableHead, TableCell
+│   │   └── ui-elements
+│   │       ├── alert
+│   │       │   ├── icons.tsx
+│   │       │   │   📦 imports: @/types/icon-props
+│   │       │   │   📤 exports: AlertWarningIcon, AlertSuccessIcon, AlertErrorIcon
+│   │       │   │   🧩 components: AlertWarningIcon, AlertSuccessIcon, AlertErrorIcon
+│   │       │   └── index.tsx
+│   │       │       📦 imports: react, class-variance-authority, @/lib/utils, react-dom
+│   │       │       📤 exports: —
+│   │       │       🧩 components: Alert
+│   │       └── button.tsx
+│   │           📦 imports: class-variance-authority, react
+│   │           📤 exports: Button
+│   │           🧩 components: Button
+│   ├── contexts
+│   │   └── EmailContext.tsx
+│   │       📦 imports: react
+│   │       📤 exports: EmailProvider, useEmailSender
+│   │       🧩 components: EmailContext, EmailProvider
+│   ├── css
+│   │   ├── satoshi.css
+│   │   └── style.css
+│   ├── fonts
+│   │   ├── Satoshi-Black.eot
+│   │   ├── Satoshi-Black.ttf
+│   │   ├── Satoshi-Black.woff
+│   │   ├── Satoshi-Black.woff2
+│   │   ├── Satoshi-BlackItalic.eot
+│   │   ├── Satoshi-BlackItalic.ttf
+│   │   ├── Satoshi-BlackItalic.woff
+│   │   ├── Satoshi-BlackItalic.woff2
+│   │   ├── Satoshi-Bold.eot
+│   │   ├── Satoshi-Bold.ttf
+│   │   ├── Satoshi-Bold.woff
+│   │   ├── Satoshi-Bold.woff2
+│   │   ├── Satoshi-BoldItalic.eot
+│   │   ├── Satoshi-BoldItalic.ttf
+│   │   ├── Satoshi-BoldItalic.woff
+│   │   ├── Satoshi-BoldItalic.woff2
+│   │   ├── Satoshi-Italic.eot
+│   │   ├── Satoshi-Italic.ttf
+│   │   ├── Satoshi-Italic.woff
+│   │   ├── Satoshi-Italic.woff2
+│   │   ├── Satoshi-Light.eot
+│   │   ├── Satoshi-Light.ttf
+│   │   ├── Satoshi-Light.woff
+│   │   ├── Satoshi-Light.woff2
+│   │   ├── Satoshi-LightItalic.eot
+│   │   ├── Satoshi-LightItalic.ttf
+│   │   ├── Satoshi-LightItalic.woff
+│   │   ├── Satoshi-LightItalic.woff2
+│   │   ├── Satoshi-Medium.eot
+│   │   ├── Satoshi-Medium.ttf
+│   │   ├── Satoshi-Medium.woff
+│   │   ├── Satoshi-Medium.woff2
+│   │   ├── Satoshi-MediumItalic.eot
+│   │   ├── Satoshi-MediumItalic.ttf
+│   │   ├── Satoshi-MediumItalic.woff
+│   │   ├── Satoshi-MediumItalic.woff2
+│   │   ├── Satoshi-Regular.eot
+│   │   ├── Satoshi-Regular.ttf
+│   │   ├── Satoshi-Regular.woff
+│   │   ├── Satoshi-Regular.woff2
+│   │   ├── Satoshi-Variable.eot
+│   │   ├── Satoshi-Variable.ttf
+│   │   ├── Satoshi-Variable.woff
+│   │   ├── Satoshi-Variable.woff2
+│   │   ├── Satoshi-VariableItalic.eot
+│   │   ├── Satoshi-VariableItalic.ttf
+│   │   ├── Satoshi-VariableItalic.woff
+│   │   ├── Satoshi-VariableItalic.woff2
+│   │   └── yekanbakh
+│   │       ├── YekanBakhFaNum-Black.woff2
+│   │       ├── YekanBakhFaNum-Bold.woff2
+│   │       ├── YekanBakhFaNum-Fat.woff2
+│   │       ├── YekanBakhFaNum-Heavy.woff2
+│   │       ├── YekanBakhFaNum-Light.woff2
+│   │       ├── YekanBakhFaNum-Medium.woff2
+│   │       ├── YekanBakhFaNum-Regular.woff2
+│   │       ├── YekanBakhFaNum-SemiBold.woff2
+│   │       └── YekanBakhFaNum-Thin.woff2
+│   ├── hooks
+│   │   ├── use-click-outside.ts
+│   │   │   📦 imports: react
+│   │   │   📤 exports: useClickOutside
+│   │   │   🧩 components: —
+│   │   └── use-mobile.ts
+│   │       📦 imports: react
+│   │       📤 exports: MOBILE_BREAKPOINT, useIsMobile
+│   │       🧩 components: MOBILE_BREAKPOINT
+│   ├── js
+│   │   ├── table-scroll.js
+│   │   ├── us-aea-en.js
+│   │   └── world.js
+│   ├── lib
+│   │   ├── format-message-time.ts
+│   │   │   📦 imports: —
+│   │   │   📤 exports: formatMessageTime
+│   │   │   🧩 components: —
+│   │   ├── format-number.ts
+│   │   │   📦 imports: —
+│   │   │   📤 exports: compactFormat, standardFormat
+│   │   │   🧩 components: —
+│   │   ├── supabase
+│   │   │   ├── client.ts
+│   │   │   │   📦 imports: @supabase/ssr
+│   │   │   │   📤 exports: createClient
+│   │   │   │   🧩 components: —
+│   │   │   ├── middleware.ts
+│   │   │   │   📦 imports: @supabase/ssr, next/server
+│   │   │   │   📤 exports: async
+│   │   │   │   🧩 components: —
+│   │   │   └── server.ts
+│   │   │       📦 imports: @supabase/ssr, next/headers
+│   │   │       📤 exports: async
+│   │   │       🧩 components: —
+│   │   ├── supabaseClient.ts
+│   │   │   📦 imports: @supabase/supabase-js, @supabase/ssr
+│   │   │   📤 exports: supabase, supabase
+│   │   │   🧩 components: —
+│   │   └── utils.ts
+│   │       📦 imports: clsx, tailwind-merge
+│   │       📤 exports: cn
+│   │       🧩 components: —
+│   ├── services
+│   │   └── charts.services.ts
+│   │       📦 imports: —
+│   │       📤 exports: async, async, async, async, async, async
+│   │       🧩 components: —
+│   ├── types
+│   │   ├── icon-props.ts
+│   │   │   📦 imports: —
+│   │   │   📤 exports: type
+│   │   │   🧩 components: —
+│   │   ├── set-state-action-type.ts
+│   │   │   📦 imports: react
+│   │   │   📤 exports: type
+│   │   │   🧩 components: —
+│   │   └── supabase.ts
+│   │       📦 imports: —
+│   │       📤 exports: type, interface, type, type, type, type
+│   │       🧩 components: —
+│   ├── utils
+│   │   └── timeframe-extractor.ts
+│   │       📦 imports: —
+│   │       📤 exports: createTimeFrameExtractor
+│   │       🧩 components: —
+│   └── _middleware.ts
+│       📦 imports: next/server, @/lib/supabase/middleware
+│       📤 exports: async, config
+│       🧩 components: —
+├── supabase
+│   ├── .temp
+│   │   └── cli-latest
+│   ├── config.toml
+│   └── functions
+│       └── send-email
+│           ├── .npmrc
+│           ├── deno.json
+│           └── index.ts
+├── tailwind.config.ts
+│   📦 imports: tailwindcss, tailwindcss/defaultTheme
+│   📤 exports: config
+│   🧩 components: —
+├── tsconfig.json
+└── yarn.lock
