@@ -14,7 +14,7 @@ export default  function GoogleSigninButton({ text }: { text: string }) {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event) => {
       if (event === "SIGNED_IN") {
-        router.push("/");
+        router.push("/smart-lawyer");
       }
     });
 

@@ -168,7 +168,7 @@ export default  function SigninWithPassword() {
       }
 
       if (data.session) {
-        router.push("/");
+        router.push("/smart-lawyer");
       } else {
         throw new Error("هیچ جلسه‌ای بازنگشت.");
       }
