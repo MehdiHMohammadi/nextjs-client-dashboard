@@ -11,6 +11,10 @@ import { OverviewCardsGroup } from "./_components/overview-cards";
 import { OverviewCardsSkeleton } from "./_components/overview-cards/skeleton";
 import { RegionLabels } from "./_components/region-labels";
 
+import { createClient } from '@/lib/supabase/server';
+import { redirect } from 'next/navigation'
+
+
 type PropsType = {
   searchParams: Promise<{
     selected_time_frame?: string;
@@ -18,6 +22,14 @@ type PropsType = {
 };
 
 export default async function Home({ searchParams }: PropsType) {
+
+const supabase = createClient()
+  const { data: { user }, error } = await (await supabase).auth.getUser()
+// اگر خطایی رخ داد یا کاربر احراز هویت نشده بود، به صفحه لاگین ریدایرکت کنید
+  if (error || !user) {
+    redirect('/login')
+  }
+
   const { selected_time_frame } = await searchParams;
   const extractTimeFrame = createTimeFrameExtractor(selected_time_frame);
 
