@@ -16,7 +16,6 @@ export async function updateSession(request: NextRequest) {
     "/settings",
     "/chat",
     "/smart-lawyer",
-
   ];
 
   // With Fluid compute, don't put this client in a global environment
@@ -60,6 +59,12 @@ export async function updateSession(request: NextRequest) {
   );
 
   // Check if the current path is in the protectedPaths array and there is no user
+  console.log("Middleware check for user authentication:");
+  console.log("User:", user);
+  console.log("Protected Paths:", protectedPaths);
+  console.log("Request Path:", request.nextUrl.pathname);
+
+  
   if (
     !user &&
     protectedPaths.some((path) => request.nextUrl.pathname.startsWith(path))

@@ -11,15 +11,15 @@ export default function SignIn() {
   return (
     <>
       <div className="rounded-[10px] bg-white shadow-1 dark:bg-gray-dark dark:shadow-card">
-        <div className="flex flex-col-reverse md:flex-row-reverse  md:flex-nowrap flex-wrap items-center">
+        <div className="flex flex-col-reverse  md:flex-row-reverse  md:flex-nowrap flex-wrap items-center">
           <div className="flex w-full md:w-1/2 md:min-w-[400px]">
             <div className="w-full p-4 sm:p-12.5 xl:p-15">
               <Signin />
             </div>
           </div>
 
-          <div className="w-full p-1 md:p-7.5 xl:block xl:w-1/2">
-            <div className="custom-gradient-1 overflow-hidden rounded-2xl px-12.5 pt-12.5 dark:!bg-dark-2 dark:bg-none">
+          <div className="w-full  p-1  md:p-7.5 xl:block xl:w-1/2">
+            <div className="custom-gradient-1 pb-8 overflow-hidden  rounded-2xl px-12.5 pt-12.5 dark:!bg-dark-2 dark:bg-none">
               <Link className="mb-10 inline-block" href="/">
                 <Image className="hidden dark:block" src={"/images/logo/logo.webp"} alt="Logo" width={176} height={32} />
                 <Image className="dark:hidden" src={"/images/logo/main.webp"} alt="Logo" width={176} height={32}
@@ -37,7 +37,7 @@ export default function SignIn() {
                 لطفاً با تکمیل فرم وارد حساب خود شوید.
               </p>
 
-              <div className="mt-31 w-auto h-auto">
+              <div className="hidden md:block mt-31 w-auto h-auto">
                 <Image src={"/images/grids/grid-02.svg"} alt="Logo" width={405} height={323} className="mx-auto dark:opacity-30" />
               </div>
             </div>

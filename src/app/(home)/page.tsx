@@ -13,7 +13,7 @@ import { RegionLabels } from "./_components/region-labels";
 
 import { createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation'
-
+import { cookies } from 'next/headers'
 
 type PropsType = {
   searchParams: Promise<{
@@ -23,13 +23,16 @@ type PropsType = {
 
 export default async function Home({ searchParams }: PropsType) {
 
-const supabase = createClient()
-  const { data: { user }, error } = await (await supabase).auth.getUser()
-// اگر خطایی رخ داد یا کاربر احراز هویت نشده بود، به صفحه لاگین ریدایرکت کنید
+const supabase = await createClient()
+  const { data: { user }, error } = await supabase.auth.getUser()
+
+  console.log('User:', user)
+  console.log('Error:', error)
+  console.log('Cookies:', (await cookies()).getAll())
+
   if (error || !user) {
     redirect('/login')
   }
-
   const { selected_time_frame } = await searchParams;
   const extractTimeFrame = createTimeFrameExtractor(selected_time_frame);
 
