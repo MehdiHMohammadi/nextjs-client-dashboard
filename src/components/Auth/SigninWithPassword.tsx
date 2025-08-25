@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { CallIcon, UserIcon, EmailIcon } from "@/assets/icons";
 import { useState } from "react";
@@ -6,31 +6,36 @@ import InputGroup from "../FormElements/InputGroup";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "react-toastify";
-// import { createClient } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/client";
 
-// راه‌اندازی کلاینت Supabase
-// const supabase = createClient(
-//   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-//   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-// );
-export default  function SigninWithPassword() {
+interface FormData {
+  phoneNumber: string;
+  name: string;
+  email: string;
+  remember: boolean;
+}
+
+export default function SigninWithPassword() {
   const supabase = createClient();
   const router = useRouter();
 
+  // State variables for form data, loading state, error messages, and step management
+  // data: شامل شماره موبایل، نام، ایمیل و وضعیت "به خاطر سپردن"
+  // userOtp: کد تأیید که کاربر وارد می‌کند
   const [data, setData] = useState({
-    phoneNumber: process.env.NEXT_PUBLIC_DEMO_USER_PHONE || "",
+    phoneNumber: "",
     name: "",
     email: "",
     remember: false,
   });
   const [userOtp, setUserOtp] = useState("");
-  const [generatedOtp, setGeneratedOtp] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const [step, setStep] = useState(1); // مرحله 1: شماره موبایل، مرحله 2: کد تأیید
-  // const [otp, setOtp] = useState<string>("");
+
+  // تابع نمایش پیام Toast
+  // این تابع برای نمایش پیام‌های موفقیت، هشدار یا خطا استفاده می‌شود.
 
   const showToast = (variant: string, title: string, description: string) => {
     let toastFunction: any;
@@ -56,7 +61,10 @@ export default  function SigninWithPassword() {
       </div>,
     );
   };
+
+
   // تابع ارسال OTP
+  
   const sendOtp = async () => {
     let phone = data.phoneNumber;
     setError(null);
@@ -64,28 +72,31 @@ export default  function SigninWithPassword() {
 
     try {
       if (!phone.startsWith("+") || phone.length < 10) {
-        // throw new Error( "لطفاً شماره تلفن را در فرمت وارد کنید (مثال: 989121234545+", );
         showToast(
           "destructive",
-          " شماره تماس اشتباه است!",
+          "شماره تماس اشتباه است!",
           "لطفاً شماره تلفن را در فرمت وارد کنید (مثال: 989121234545+",
         );
+        setLoading(false);
+        return;
       }
       if (!data.name.trim() || data.name.length < 2) {
-        throw new Error("لطفاً نام معتبر وارد کنید (حداقل ۲ کاراکتر)");
         showToast(
           "destructive",
-          "خطا در ارسال ",
+          "خطا",
           "لطفاً نام معتبر وارد کنید (حداقل ۲ کاراکتر)",
         );
+        setLoading(false);
+        return;
       }
       if (!data.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-        // throw new Error("لطفاً یک ایمیل معتبر وارد کنید");
         showToast(
           "destructive",
           "خطا در ارسال OTP",
           "لطفاً یک ایمیل معتبر وارد کنید",
         );
+        setLoading(false);
+        return;
       }
 
       const { error } = await supabase.auth.signInWithOtp({
@@ -125,17 +136,7 @@ export default  function SigninWithPassword() {
 
   // تابع تأیید OTP
   const verifyOtp = async () => {
-    // if (userOtp === generatedOtp && userOtp !== "") {
-    //   showToast("success", "کد OTP درست است.", "شما با موفقیت وارد شدید.");
-    //   router.push("/");
-    // } else {
-    //   console.error("کد OTP اشتباه است");
-    //   showToast(
-    //     "destructive",
-    //     "کد OTP اشتباه است",
-    //     "لطفاً کد OTP صحیح را وارد نمائید.",
-    //   );
-    // }
+  
     let phone = data.phoneNumber;
     setError(null);
     setLoading(true);
@@ -146,14 +147,12 @@ export default  function SigninWithPassword() {
         type: "sms",
       });
 
+
+      
       if (error) {
         if (error.message.includes("invalid_api_key")) {
           // throw new Error("پیکربندی وب‌هوک نامعتبر است.");
-             showToast(
-          "destructive",
-          "خطا",
-          "پیکربندی وب‌هوک نامعتبر است."
-        );
+          showToast("destructive", "خطا", "پیکربندی وب‌هوک نامعتبر است.");
         } else if (error.message.includes("blocked")) {
           // throw new Error("تلاش برای احراز هویت مسدود شده است.");
           showToast(
@@ -186,7 +185,7 @@ export default  function SigninWithPassword() {
   };
 
   // مدیریت تغییرات ورودی‌ها
-  const handleChange = (e: any) => {
+  const handleChange =(e: React.ChangeEvent<HTMLInputElement>) => {
     setData({
       ...data,
       [e.target.name]: e.target.value,

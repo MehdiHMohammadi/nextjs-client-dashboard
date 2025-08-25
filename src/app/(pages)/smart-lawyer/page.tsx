@@ -43,13 +43,13 @@ const SmartLawyer = () => {
 
   return (
     <>
-      {/* <Breadcrumb pageName="وکیل هوشمند" /> */}
+      {/* <Breadcrumb pageName="دستیار حقوقی" /> */}
       <div className="space-y-10">
         <div>
           <iframe
             src={`https://smart-legal-beta.vercel.app?userId=${userId}`}
             className="h-[75vh] w-full border-none"
-            title="وکیل هوشمند"
+            title="دستیار حقوقی"
           />
         </div>
       </div>

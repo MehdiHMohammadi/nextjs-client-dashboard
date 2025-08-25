@@ -28,7 +28,7 @@ export const NAV_DATA : NavSection[] = [
         items: [],
       },
       {
-        title: "وکیل هوشمند",
+        title: "دستیار حقوقی",
         url: "/smart-lawyer",
         // url: "https://smart-legal-assistant.vercel.app",
         icon: Icons.Chats,
