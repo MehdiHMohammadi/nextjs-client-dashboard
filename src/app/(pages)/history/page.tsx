@@ -41,35 +41,34 @@ interface Attorney {
   image: string;
 }
 export default function ConversationsPage() {
-
   // ✅ تابع ارسال درخواست به وکلا
   const requestConsultation = async (id: string, item_name: string) => {
     try {
-      const res = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           // to: ['mehdihmohammadi@gmail.com', 'mehdihmohammadi@outlook.com'], // می‌تونی یک یا چند ایمیل بزنی
-          to: ['sina.koosha1992@gmail.com', 'info@koosha.group'], // می‌تونی یک یا چند ایمیل بزنی
+          to: ["sina.koosha1992@gmail.com", "info@koosha.group"], // می‌تونی یک یا چند ایمیل بزنی
           clientName: `${item_name}`,
           caseSummary:
-            'جمع‌بندی مشکل حقوقی شما به شرح زیر است: شما با موجر خود بر سر بازپرداخت ودیعه مشکل دارید. قرارداد اجاره شما کتبی است اما بندی برای بازپرداخت ودیعه در آن وجود ندارد. شما ملک را تخلیه کرده‌اید و موجر بهانه می‌آورد و ودیعه را بازپرداخت نمی‌کند. تا به حال به صورت رسمی و کتبی درخواست بازپرداخت نداده‌اید و موضوع برای شما فوریت ندارد.',
-          subject: ` درخواست بررسی مشکل حقوقی کاربر به ${item_name}`
-        })
-      })
+            "جمع‌بندی مشکل حقوقی شما به شرح زیر است: شما با موجر خود بر سر بازپرداخت ودیعه مشکل دارید. قرارداد اجاره شما کتبی است اما بندی برای بازپرداخت ودیعه در آن وجود ندارد. شما ملک را تخلیه کرده‌اید و موجر بهانه می‌آورد و ودیعه را بازپرداخت نمی‌کند. تا به حال به صورت رسمی و کتبی درخواست بازپرداخت نداده‌اید و موضوع برای شما فوریت ندارد.",
+          subject: ` درخواست بررسی مشکل حقوقی کاربر به ${item_name}`,
+        }),
+      });
 
-      const data = await res.json()
+      const data = await res.json();
 
       if (data.success) {
-        alert(`مشکل حقوقی شما به وکیل ${item_name} ارسال شد.`)
+        alert(`مشکل حقوقی شما به وکیل ${item_name} ارسال شد.`);
       } else {
-        alert(`مشکل حقوقی شما به وکیل ${item_name} ارسال نشد.`)
+        alert(`مشکل حقوقی شما به وکیل ${item_name} ارسال نشد.`);
       }
     } catch (err: any) {
-      alert('❌ خطا: ' + err.message)
+      alert("❌ خطا: " + err.message);
     } finally {
     }
-  }
+  };
 
   const [groupedConversations, setGroupedConversations] =
     useState<GroupedConversations>({});
@@ -184,7 +183,10 @@ export default function ConversationsPage() {
             </h2>
             <div className="space-y-4">
               {groupedConversations[dateKey].map((conv) => (
-                <div key={conv.id} className="flex items-center justify-between rounded-lg bg-gray-100 p-4 shadow dark:bg-gray-800" >
+                <div
+                  key={conv.id}
+                  className="flex items-center justify-between rounded-lg bg-gray-100 p-4 shadow dark:bg-gray-800"
+                >
                   <div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
                       {new Date(conv.created_at).toLocaleTimeString("fa-IR")}
@@ -197,7 +199,10 @@ export default function ConversationsPage() {
                       {new Date(conv.updated_at).toLocaleString("fa-IR")}
                     </p>
                   </div>
-                  <button onClick={() => handleViewMessages(conv.id)} className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600" >
+                  <button
+                    onClick={() => handleViewMessages(conv.id)}
+                    className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+                  >
                     مشاهده گفتگو
                   </button>
                 </div>
@@ -270,116 +275,119 @@ c-48 -39 14 -2 159 95 145 98 332 242 435 336 l58 54 230 3 c224 2 230 3 261
                 if (msg.role === "tool") {
                   try {
                     const parsedContent = JSON.parse(msg.content);
-                    const attorneys: Attorney[] =
-                      parsedContent.attorneys || [];
+                    const attorneys: Attorney[] = parsedContent.attorneys || [];
                     return (
                       <div key={msg.id} className="space-y-4">
-                        {attorneys.map((attorney) => (
-                          <div className="relative m-3 flex h-auto w-72 flex-shrink-0 flex-col justify-between overflow-hidden overflow-x-auto rounded-2xl border border-gray-200 bg-gray-50 p-4">
-                            {attorney.Legal_500 ? (
-                              <div className="absolute -right-12 top-6">
-                                <div className="-translate-x-8 -translate-y-3 rotate-45 rounded-md bg-white px-4 py-1 text-xs font-bold text-gray-700 shadow">
-                                  <span className="font-bold">Legal</span>
-                                  <span className="font-normal">500</span>
+                        <div className="flex w-full flex-col space-x-2 md:flex-row md:overflow-x-scroll">
+                          {attorneys.map((attorney) => (
+                            <div className="relative m-3 flex h-auto w-72 flex-shrink-0 flex-col justify-between overflow-hidden overflow-x-auto rounded-2xl border border-gray-200 bg-gray-50 p-4">
+                              {attorney.Legal_500 ? (
+                                <div className="absolute -right-12 top-6">
+                                  <div className="-translate-x-8 -translate-y-3 rotate-45 rounded-md bg-white px-4 py-1 text-xs font-bold text-gray-700 shadow">
+                                    <span className="font-bold">Legal</span>
+                                    <span className="font-normal">500</span>
+                                  </div>
                                 </div>
-                              </div>
-                            ) : (
-                              <div className="animate-puls"></div>
-                            )}
-                            {/* <div className="flex flex-col items-center"> */}
-                            <div className="flex flex-col items-center gap-1">
-                              {attorney.image &&
+                              ) : (
+                                <div className="animate-puls"></div>
+                              )}
+                              {/* <div className="flex flex-col items-center"> */}
+                              <div className="flex flex-col items-center gap-1">
+                                {attorney.image &&
                                 attorney.image.match(
                                   /\.(jpeg|jpg|gif|png|webp)$/,
                                 ) ? (
-                                <img
-                                  src={`/images/UAE_Ministry_of_Justice.webp`}
-                                  alt={attorney.item_company || "Lawyer Image"}
-                                  className="h-20 w-full rounded-lg border bg-gray-50 object-contain p-2"
-                                />
-                              ) : (
-                                <div className="h-full w-full animate-pulse bg-gray-200"></div>
-                              )}
-                              <div className="flex w-full flex-col gap-1">
-                                <div className="flex items-center justify-between">
-                                  <span className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600">
-                                    +{attorney.Years_of_experience} سال تجربه
-                                  </span>
-                                  <div className="flex items-center gap-1">
-                                    <span className="text-sm font-bold text-gray-700">
-                                      {attorney.Google_reviews}
+                                  <img
+                                    src={`/images/UAE_Ministry_of_Justice.webp`}
+                                    alt={
+                                      attorney.item_company || "Lawyer Image"
+                                    }
+                                    className="h-20 w-full rounded-lg border bg-gray-50 object-contain p-2"
+                                  />
+                                ) : (
+                                  <div className="h-full w-full animate-pulse bg-gray-200"></div>
+                                )}
+                                <div className="flex w-full flex-col gap-1">
+                                  <div className="flex items-center justify-between">
+                                    <span className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600">
+                                      +{attorney.Years_of_experience} سال تجربه
                                     </span>
-                                    <span className="text-xl text-yellow-400">
-                                      ★
-                                    </span>
+                                    <div className="flex items-center gap-1">
+                                      <span className="text-sm font-bold text-gray-700">
+                                        {attorney.Google_reviews}
+                                      </span>
+                                      <span className="text-xl text-yellow-400">
+                                        ★
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div className="dir-ltr truncate text-center font-bold text-gray-900">
+                                    {attorney.item_company}
+                                    <hr className="my-2 opacity-20" />
                                   </div>
                                 </div>
-                                <div className="dir-ltr truncate text-center font-bold text-gray-900">
-                                 {attorney.item_company}
-                                  <hr className="my-2 opacity-20" />
+                              </div>
+                              {/* اطلاعات */}
+                              <div className="flex flex-col gap-2 text-sm text-gray-700">
+                                <div className="items-top flex gap-2">
+                                  <span className="text-gray-400">🏢</span>
+                                  <span className="text-sm font-bold">
+                                    سایز شرکت :
+                                  </span>
+                                  <span className="text-gray-500">
+                                    {attorney.Size
+                                      ? attorney.Size.toLocaleString()
+                                      : "نامشخص"}
+                                  </span>
+                                </div>
+                                <div className="items-top flex gap-1">
+                                  <span>📚</span>
+                                  <span className="flex-none text-sm font-bold">
+                                    تخصص ها :
+                                  </span>
+                                  <span className="list-disc pl-5 text-xs text-gray-500">
+                                    {Array.isArray(attorney.Specialisms) &&
+                                    attorney.Specialisms.length > 0 ? (
+                                      attorney.Specialisms.map(
+                                        (spec: string, index: number) => (
+                                          <span key={index}>{spec}</span>
+                                        ),
+                                      )
+                                    ) : (
+                                      <span className="text-gray-400">
+                                        {attorney.Specialisms}
+                                      </span>
+                                    )}
+                                  </span>
+                                </div>
+                                <div className="items-top flex gap-2">
+                                  <span>🌐</span>
+                                  <span className="font-bold">زبان ها :</span>
+                                  <span className="text-gray-500">
+                                    {" "}
+                                    {attorney.Languages
+                                      ? attorney.Languages.toLocaleString()
+                                      : "نامشخص"}
+                                  </span>
                                 </div>
                               </div>
+                              {/* دکمه */}
+                              <button
+                                className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-red-100 py-2 font-bold text-red-600 transition hover:bg-red-200"
+                                aria-label="درخواست مشاوره"
+                                onClick={() =>
+                                  requestConsultation(
+                                    attorney.id,
+                                    attorney.item_name,
+                                  )
+                                }
+                              >
+                                درخواست مشاوره
+                                <span className="text-lg">📞</span>
+                              </button>
                             </div>
-                            {/* اطلاعات */}
-                            <div className="flex flex-col gap-2 text-sm text-gray-700">
-                              <div className="items-top flex gap-2">
-                                <span className="text-gray-400">🏢</span>
-                                <span className="text-sm font-bold">
-                                  سایز شرکت :
-                                </span>
-                                <span className="text-gray-500">
-                                  {attorney.Size
-                                    ? attorney.Size.toLocaleString()
-                                    : "نامشخص"}
-                                </span>
-                              </div>
-                              <div className="items-top flex gap-1">
-                                <span>📚</span>
-                                <span className="flex-none text-sm font-bold">
-                                  تخصص ها :
-                                </span>
-                                <span className="list-disc pl-5 text-xs text-gray-500">
-                                  {Array.isArray(attorney.Specialisms) &&
-                                    attorney.Specialisms.length > 0 ? (
-                                    attorney.Specialisms.map(
-                                      (spec: string, index: number) => (
-                                        <span key={index}>{spec}</span>
-                                      ),
-                                    )
-                                  ) : (
-                                    <span className="text-gray-400">
-                                      {attorney.Specialisms}
-                                    </span>
-                                  )}
-                                </span>
-                              </div>
-                              <div className="items-top flex gap-2">
-                                <span>🌐</span>
-                                <span className="font-bold">زبان ها :</span>
-                                <span className="text-gray-500">
-                                  {" "}
-                                  {attorney.Languages
-                                    ? attorney.Languages.toLocaleString()
-                                    : "نامشخص"}
-                                </span>
-                              </div>
-                            </div>
-                            {/* دکمه */}
-                            <button
-                              className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-red-100 py-2 font-bold text-red-600 transition hover:bg-red-200"
-                              aria-label="درخواست مشاوره"
-                              onClick={() =>
-                                requestConsultation(
-                                  attorney.id,
-                                  attorney.item_name,
-                                )
-                              }
-                            >
-                              درخواست مشاوره
-                              <span className="text-lg">📞</span>
-                            </button>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
                     );
                   } catch (e) {
@@ -390,9 +398,7 @@ c-48 -39 14 -2 159 95 145 98 332 242 435 336 l58 54 230 3 c224 2 230 3 261
                         className="rounded-lg bg-gray-100 p-4 shadow dark:bg-gray-800"
                       >
                         <p className="text-sm text-gray-600 dark:text-gray-300">
-                          {new Date(msg.created_at).toLocaleTimeString(
-                            "fa-IR",
-                          )}{" "}
+                          {new Date(msg.created_at).toLocaleTimeString("fa-IR")}{" "}
                           - {msg.role}
                         </p>
                         <p className="text-red-500 dark:text-red-400">
@@ -405,10 +411,11 @@ c-48 -39 14 -2 159 95 145 98 332 242 435 336 l58 54 230 3 c224 2 230 3 261
                   return (
                     <div
                       key={msg.id}
-                      className="rounded-lg bg-gray-100 p-4 shadow dark:bg-gray-800" >
+                      className="rounded-lg bg-gray-100 p-4 shadow dark:bg-gray-800"
+                    >
                       <p className="text-sm text-gray-600 dark:text-gray-300">
-                        {new Date(msg.created_at).toLocaleTimeString("fa-IR")}{" "}
-                        - {msg.role}
+                        {new Date(msg.created_at).toLocaleTimeString("fa-IR")} -{" "}
+                        {msg.role}
                       </p>
                       <p className="text-gray-900 dark:text-white">
                         {msg.content}
@@ -423,4 +430,4 @@ c-48 -39 14 -2 159 95 145 98 332 242 435 336 l58 54 230 3 c224 2 230 3 261
       )}
     </div>
   );
-};
+}
