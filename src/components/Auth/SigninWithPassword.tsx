@@ -20,8 +20,8 @@ export default function SigninWithPassword() {
   const router = useRouter();
 
   // State variables for form data, loading state, error messages, and step management
-  // data: شامل شماره موبایل، نام، ایمیل و وضعیت "به خاطر سپردن"
-  // userOtp: کد تأیید که کاربر وارد می‌کند
+  // data: includes phone number, name, email and "remember" status
+  // userOtp: verification code that user enters
   const [data, setData] = useState({
     phoneNumber: "",
     name: "",
@@ -32,10 +32,10 @@ export default function SigninWithPassword() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [step, setStep] = useState(1); // مرحله 1: شماره موبایل، مرحله 2: کد تأیید
+  const [step, setStep] = useState(1); // Step 1: phone number, Step 2: verification code
 
-  // تابع نمایش پیام Toast
-  // این تابع برای نمایش پیام‌های موفقیت، هشدار یا خطا استفاده می‌شود.
+  // Toast message display function
+  // This function is used to display success, warning or error messages.
 
   const showToast = (variant: string, title: string, description: string) => {
     let toastFunction: any;
@@ -63,7 +63,7 @@ export default function SigninWithPassword() {
   };
 
 
-  // تابع ارسال OTP
+  // OTP sending function
   
   const sendOtp = async () => {
     let phone = data.phoneNumber;
@@ -74,8 +74,8 @@ export default function SigninWithPassword() {
       if (!phone.startsWith("+") || phone.length < 10) {
         showToast(
           "destructive",
-          "شماره تماس اشتباه است!",
-          "لطفاً شماره تلفن را در فرمت وارد کنید (مثال: 989121234545+",
+          "Invalid phone number!",
+          "Please enter phone number in correct format (example: +989121234545)",
         );
         setLoading(false);
         return;
@@ -83,8 +83,8 @@ export default function SigninWithPassword() {
       if (!data.name.trim() || data.name.length < 2) {
         showToast(
           "destructive",
-          "خطا",
-          "لطفاً نام معتبر وارد کنید (حداقل ۲ کاراکتر)",
+          "Error",
+          "Please enter a valid name (minimum 2 characters)",
         );
         setLoading(false);
         return;
@@ -92,8 +92,8 @@ export default function SigninWithPassword() {
       if (!data.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
         showToast(
           "destructive",
-          "خطا در ارسال OTP",
-          "لطفاً یک ایمیل معتبر وارد کنید",
+          "Error sending OTP",
+          "Please enter a valid email",
         );
         setLoading(false);
         return;
@@ -113,13 +113,13 @@ export default function SigninWithPassword() {
       if (error) {
         if (error.message.includes("invalid_phone_number")) {
           // throw new Error("فرمت شماره تلفن نامعتبر است.");
-          showToast("destructive", "خطا", "فرمت شماره تلفن نامعتبر است.");
+          showToast("destructive", "Error", "Invalid phone number format.");
         } else if (error.message.includes("supabase_not_enabled")) {
           // throw new Error("احراز هویت تلفنی Supabase فعال نیست.");
           showToast(
             "destructive",
-            "خطا",
-            "احراز هویت تلفنی Supabase فعال نیست.",
+            "Error",
+            "Supabase phone authentication is not enabled.",
           );
         } else {
           throw new Error(error.message);
@@ -128,13 +128,13 @@ export default function SigninWithPassword() {
 
       setStep(2);
     } catch (err: any) {
-      setError(err.message || "خطایی رخ داد. لطفاً دوباره تلاش کنید.");
+      setError(err.message || "An error occurred. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
-  // تابع تأیید OTP
+  // OTP verification function
   const verifyOtp = async () => {
   
     let phone = data.phoneNumber;
@@ -152,31 +152,31 @@ export default function SigninWithPassword() {
       if (error) {
         if (error.message.includes("invalid_api_key")) {
           // throw new Error("پیکربندی وب‌هوک نامعتبر است.");
-          showToast("destructive", "خطا", "پیکربندی وب‌هوک نامعتبر است.");
+          showToast("destructive", "Error", "Invalid webhook configuration.");
         } else if (error.message.includes("blocked")) {
           // throw new Error("تلاش برای احراز هویت مسدود شده است.");
           showToast(
             "destructive",
-            "خطا",
-            "تلاش برای احراز هویت مسدود شده است.",
+            "Error",
+            "Authentication attempt has been blocked.",
           );
         } else {
           // throw new Error("کد OTP نامعتبر است.");
-          showToast("destructive", "خطا", "کد OTP نامعتبر است.");
+          showToast("destructive", "Error", "Invalid OTP code.");
         }
       }
 
       if (data.session) {
         router.push("/smart-lawyer");
       } else {
-        throw new Error("هیچ جلسه‌ای بازنگشت.");
+        throw new Error("No session returned.");
       }
     } catch (error: any) {
-      console.error("خطا:", error);
+      console.error("Error:", error);
       showToast(
         "destructive",
-        "خطا در ارسال OTP",
-        error.message || "سرور پاسخگو نیست.",
+        "Error sending OTP",
+        error.message || "Server is not responding.",
       );
       // alert(error.message);
     } finally {
@@ -184,7 +184,7 @@ export default function SigninWithPassword() {
     }
   };
 
-  // مدیریت تغییرات ورودی‌ها
+  // Handle input changes
   const handleChange =(e: React.ChangeEvent<HTMLInputElement>) => {
     setData({
       ...data,
@@ -192,7 +192,7 @@ export default function SigninWithPassword() {
     });
   };
 
-  // مدیریت ارسال فرم
+  // Handle form submission
   const handleSubmit = (e: any) => {
     e.preventDefault();
     if (step === 1) {
@@ -202,7 +202,7 @@ export default function SigninWithPassword() {
     }
   };
 
-  // تنظیمات انیمیشن
+  // Animation settings
   const variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -224,9 +224,9 @@ export default function SigninWithPassword() {
             >
               <InputGroup
                 type="text"
-                label="نام و نام خانوادگی"
+                label="Full Name"
                 className="mb-4 [&_input]:py-[15px]"
-                placeholder="نام خود را وارد نمایید"
+                placeholder="Enter your name"
                 name="name"
                 handleChange={handleChange}
                 value={data.name}
@@ -235,7 +235,7 @@ export default function SigninWithPassword() {
               />
               <InputGroup
                 type="email"
-                label="ایمیل"
+                label="Email"
                 className="mb-4 [&_input]:py-[15px]"
                 placeholder="email@mail.com"
                 name="email"
@@ -246,7 +246,7 @@ export default function SigninWithPassword() {
               />
               <InputGroup
                 type="tel"
-                label="موبایل"
+                label="Mobile"
                 className="mb-4 [&_input]:py-[15px]"
                 placeholder="+98912XXXXX"
                 name="phoneNumber"
@@ -267,9 +267,9 @@ export default function SigninWithPassword() {
             >
               <InputGroup
                 type="text"
-                label="کد تأیید"
+                label="Verification Code"
                 className="mb-4 [&_input]:py-[15px]"
-                placeholder="کد OTP را وارد کنید"
+                placeholder="Enter OTP code"
                 name="otp"
                 handleChange={(e: any) => setUserOtp(e.target.value)}
                 value={userOtp}
@@ -290,7 +290,7 @@ export default function SigninWithPassword() {
             }`}
             disabled={loading}
           >
-            {step === 1 ? "فرستادن کد" : "تأیید کد"}
+            {step === 1 ? "Send Code" : "Verify Code"}
             {loading && (
               <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-white border-t-transparent dark:border-primary dark:border-t-transparent" />
             )}

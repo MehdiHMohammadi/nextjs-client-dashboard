@@ -19,66 +19,66 @@ interface NavSection {
 
 export const NAV_DATA : NavSection[] = [
   {
-    label: "منوی اصلی",
+    label: "Main Menu",
     items: [
       {
-        title: "داشبورد",
+        title: "Dashboard",
         url: "/",
         icon: Icons.Dashboard,
         items: [],
       },
       {
-        title: "دستیار حقوقی",
+        title: "Legal Assistant",
         url: "/smart-lawyer",
         // url: "https://smart-legal-assistant.vercel.app",
         icon: Icons.Chats,
         items: [],
       },
       {
-        title: "تاریخچه",
+        title: "History",
         url: "/history",
         icon: Icons.History,
         items: [],
       },
       {
-        title: "شرکت‌های حقوقی",
+        title: "Law Firms",
         url: "/file-flow",
         icon: Icons.FolderOpen,
         items: [],
       },
       {
-        title: "مدارک ارسالی",
+        title: "Sent Documents",
         url: "/sent-documents",
         icon: Icons.Send,
         items: [],
       },
       {
-        title: "ترجمه",
+        title: "Translation",
         url: "/translate",
         icon: Icons.Translate,
         items: [],
       },
       {
-        title: "گفتگو",
+        title: "Chat",
         url: "/chat",
         icon: Icons.chatIcon,
         items: [],
       },
       {
-        title: "ویرایش اطلاعات",
+        title: "Edit Information",
         url: "/settings",
         icon: Icons.User,
         items: [],
       },
       {
-        title: "تماس با ما",
+        title: "Contact Us",
         url: "/profile",
         icon: Icons.Conect,
         items: [],
       },
     
       {
-        title: "تقویم",
+        title: "Calendar",
         url: "/calendar",
         icon: Icons.Calendar,
         items: [],

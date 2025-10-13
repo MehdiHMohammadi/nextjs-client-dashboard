@@ -5,12 +5,12 @@ import Link from "next/link";
 import Signin from "@/components/Auth/Signin";
 
 export const metadata: Metadata = {
-  title: "ورود",
+  title: "Login",
 };
 export default function SignIn() {
   return (
     <>
-      <div className="rounded-[10px] bg-white shadow-1 dark:bg-gray-dark dark:shadow-card">
+      <div className="rounded-[10px] bg-white shadow-1 dark:bg-gray-dark dark:shadow-card" dir="ltr">
         <div className="flex flex-col-reverse  md:flex-row-reverse  md:flex-nowrap flex-wrap items-center">
           <div className="flex w-full md:w-1/2 md:min-w-[400px]">
             <div className="w-full p-4 sm:p-12.5 xl:p-15">
@@ -26,15 +26,15 @@ export default function SignIn() {
                 />
               </Link>
               <p className="mb-3 text-xl font-medium text-dark dark:text-white">
-                ورود به اپلیکیشن
+                Sign in to the application
               </p>
 
               <h1 className="mb-4 text-2xl font-bold text-dark dark:text-white sm:text-heading-3">
-                خوش آمدید!
+                Welcome!
               </h1>
 
               <p className="w-full max-w-[375px] font-medium text-dark-4 dark:text-dark-6">
-                لطفاً با تکمیل فرم وارد حساب خود شوید.
+                Please complete the form to sign in to your account.
               </p>
 
               <div className="hidden md:block mt-31 w-auto h-auto">

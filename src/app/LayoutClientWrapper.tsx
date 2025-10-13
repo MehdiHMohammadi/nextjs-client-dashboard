@@ -10,7 +10,7 @@ import type { PropsWithChildren } from "react";
 export default function LayoutClientWrapper({ children }: PropsWithChildren) {
   const pathname = usePathname();
 
-  if (pathname === "/login") {
+  if (pathname === "/login" || pathname === "/smart-lawyer") {
     return (
       <Providers>
         <NextTopLoader showSpinner={false} />
