@@ -48,7 +48,7 @@ const SmartLawyer = () => {
         <div>
           <iframe
             src={`https://smart-legal-beta.vercel.app?userId=${userId}`}
-            className="h-[75vh] w-full border-none"
+            className="h-screen w-full border-none"
             title="دستیار حقوقی"
           />
         </div>
