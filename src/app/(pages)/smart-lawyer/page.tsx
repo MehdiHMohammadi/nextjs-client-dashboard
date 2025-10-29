@@ -47,7 +47,7 @@ const SmartLawyer = () => {
       <div className="space-y-10">
         <div>
           <iframe
-            src={`https://smart-legal-git-branchnew-mehdihmohammadis-projects.vercel.app/?userId=${userId}`}
+            src={`https://smart-legal-beta.vercel.app/?userId=${userId}`}
             className="h-screen w-full border-none"
             title="دستیار حقوقی"
           />
