@@ -1,2 +1,0 @@
-This is a simple test file for translation.
-It contains basic text that should be easy to process.
