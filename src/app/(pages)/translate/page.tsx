@@ -45,7 +45,7 @@ export default function Translate() {
       console.log('File:', selectedFile.name, selectedFile.type, selectedFile.size);
       console.log('Target language:', targetLanguage);
 
-      const response = await fetch('/api/translate-document', {
+      const response = await fetch('/api/translate-text-only', {
         method: 'POST',
         body: formData,
       });

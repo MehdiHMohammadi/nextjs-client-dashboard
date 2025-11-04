@@ -18,14 +18,9 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
 }) => {
   const [isDragOver, setIsDragOver] = useState(false);
 
-  // Supported file types
+  // Supported file types (temporarily only text files for testing)
   const supportedTypes = [
-    'application/pdf',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    'application/msword',
-    'text/plain',
-    'application/rtf',
-    'text/rtf'
+    'text/plain'
   ];
 
   // Maximum file size (15MB)
@@ -34,7 +29,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
   const validateFile = (file: File): string | null => {
     // Check file type
     if (!supportedTypes.includes(file.type)) {
-      return 'نوع فایل پشتیبانی نمی‌شود. فرمت‌های مجاز: PDF, DOC, DOCX, TXT, RTF';
+      return 'نوع فایل پشتیبانی نمی‌شود. فرمت‌های مجاز: TXT (فقط برای تست)';
     }
 
     // Check file size
@@ -104,7 +99,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
       >
         <input
           type="file"
-          accept=".pdf,.doc,.docx,.txt,.rtf"
+          accept=".txt"
           onChange={handleFileInputChange}
           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
           disabled={loading}
@@ -120,7 +115,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
               فایل داکیومنت را اینجا بکشید یا کلیک کنید
             </p>
             <p className="text-sm text-dark-6 dark:text-gray-400 mt-2">
-              فرمت‌های پشتیبانی شده: PDF, DOC, DOCX, TXT, RTF
+              فرمت‌های پشتیبانی شده: TXT (فقط برای تست)
             </p>
             <p className="text-sm text-dark-6 dark:text-gray-400">
               حداکثر حجم: 15 مگابایت

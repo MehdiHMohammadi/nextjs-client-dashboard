@@ -1,27 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-// Dynamic imports for better compatibility
-let pdf: any;
-let mammoth: any;
-
 // Initialize OpenAI client
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-
-// Supported file types
-const SUPPORTED_TYPES = {
-  'application/pdf': 'pdf',
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'docx',
-  'application/msword': 'doc',
-  'text/plain': 'txt',
-  'application/rtf': 'rtf',
-  'text/rtf': 'rtf',
-};
-
-// Maximum file size (15MB)
-const MAX_FILE_SIZE = 15 * 1024 * 1024;
 
 // Language mapping
 const LANGUAGE_MAP = {
@@ -30,70 +13,12 @@ const LANGUAGE_MAP = {
   'ar': 'Arabic'
 };
 
-interface TranslationRequest {
-  file: File;
-  targetLanguage: 'en' | 'fa' | 'ar';
-}
-
 interface TranslationResponse {
   translation: string;
   legalNotes: string[];
   originalText: string;
   fileName: string;
   targetLanguage: string;
-}
-
-// Extract text from different file types
-async function extractTextFromFile(file: File): Promise<string> {
-  const buffer = await file.arrayBuffer();
-  const fileType = file.type;
-  
-  console.log('Extracting text from file:', file.name, 'Type:', fileType, 'Size:', file.size);
-  
-  try {
-    switch (SUPPORTED_TYPES[fileType as keyof typeof SUPPORTED_TYPES]) {
-      case 'pdf':
-        console.log('Processing PDF file...');
-        if (!pdf) {
-          console.log('Importing pdf-parse...');
-          const pdfModule = await import('pdf-parse');
-          pdf = pdfModule.default || pdfModule;
-        }
-        const pdfData = await pdf(Buffer.from(buffer));
-        console.log('PDF text extracted, length:', pdfData.text.length);
-        return pdfData.text;
-        
-      case 'docx':
-        console.log('Processing DOCX file...');
-        if (!mammoth) {
-          console.log('Importing mammoth...');
-          const mammothModule = await import('mammoth');
-          mammoth = mammothModule.default || mammothModule;
-        }
-        const docxResult = await mammoth.extractRawText({ buffer: Buffer.from(buffer) });
-        console.log('DOCX text extracted, length:', docxResult.value.length);
-        return docxResult.value;
-        
-      case 'txt':
-      case 'rtf':
-        console.log('Processing text file...');
-        const text = new TextDecoder().decode(buffer);
-        console.log('Text extracted, length:', text.length);
-        return text;
-        
-      default:
-        console.log('Unsupported file type:', fileType);
-        throw new Error(`Unsupported file type: ${fileType}`);
-    }
-  } catch (error) {
-    console.error('Error extracting text:', error);
-    console.error('Error details:', {
-      name: error instanceof Error ? error.name : 'Unknown',
-      message: error instanceof Error ? error.message : 'Unknown error',
-      stack: error instanceof Error ? error.stack : 'No stack trace'
-    });
-    throw new Error(`Failed to extract text from file: ${error instanceof Error ? error.message : 'Unknown error'}`);
-  }
 }
 
 // Generate translation and legal notes using OpenAI
@@ -169,7 +94,7 @@ Focus on:
 
 export async function POST(request: NextRequest) {
   try {
-    console.log('Translation API called');
+    console.log('Text-only translation API called');
     
     const formData = await request.formData();
     const file = formData.get('file') as File;
@@ -193,24 +118,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check file size
-    if (file.size > MAX_FILE_SIZE) {
+    // Only support text files for now
+    if (file.type !== 'text/plain') {
       return NextResponse.json(
-        { error: 'File size exceeds 15MB limit' },
-        { status: 400 }
-      );
-    }
-
-    // Check file type
-    if (!SUPPORTED_TYPES[file.type as keyof typeof SUPPORTED_TYPES]) {
-      return NextResponse.json(
-        { error: 'Unsupported file type. Supported types: PDF, DOC, DOCX, TXT, RTF' },
+        { error: 'Only text files (.txt) are supported in this test version' },
         { status: 400 }
       );
     }
 
     // Extract text from file
-    const originalText = await extractTextFromFile(file);
+    const buffer = await file.arrayBuffer();
+    const originalText = new TextDecoder().decode(buffer);
+    
+    console.log('Text extracted, length:', originalText.length);
     
     if (!originalText || originalText.trim().length === 0) {
       return NextResponse.json(
