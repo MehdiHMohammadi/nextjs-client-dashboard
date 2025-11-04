@@ -14,7 +14,7 @@ export default function LayoutClientWrapper({ children }: PropsWithChildren) {
     return (
       <Providers>
         <NextTopLoader showSpinner={false} />
-        <main className="isolate mx-auto h-full md:h-screen w-full overflow-hidden p-4 md:w-2/3 md:p-6 2xl:p-10">
+        <main className="isolate mx-auto h-full md:h-screen w-full overflow-hidden p-4  md:p-6 2xl:p-10">
           {children}
         </main>
       </Providers>
